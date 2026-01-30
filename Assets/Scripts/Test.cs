@@ -20,5 +20,10 @@ public class Test : MonoBehaviour
         {
             character.ChangeAnimation(CharacterAnimation.Animations.Run);
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ConfirmationController.Instance.AskForConfirmation("Confirm?", "Yes", "NO");
+        }
     }
 }
