@@ -39,12 +39,14 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
 
     private void OpenPanel()
     {
+        Time.timeScale = 0.0f;
         container.SetActive(true);
         BlockController.Instance.Block(container.transform);
     }
 
     private void ClosePanel()
     {
+        Time.timeScale = 1.0f;
         container.SetActive(false);
         BlockController.Instance.Unblock(container.transform);
     }

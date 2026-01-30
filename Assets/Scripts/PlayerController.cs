@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
 
     private Vector2 velocity;
 
+    public Vector2 Velocity { get => velocity; }
+
     public void Tick()
     {
         horizontal = Input.GetAxisRaw("Horizontal");

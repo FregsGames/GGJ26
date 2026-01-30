@@ -25,5 +25,9 @@ public class Test : MonoBehaviour
         {
             ConfirmationController.Instance.AskForConfirmation("Confirm?", "Yes", "NO");
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+        }
     }
 }
