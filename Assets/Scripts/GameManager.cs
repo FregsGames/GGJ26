@@ -10,6 +10,7 @@ public class GameManager : MySerializedSingleton<GameManager>
     private List<IController> controller;
 
     public Camera Cam { get => uiCamera; }
+    public bool Loaded { get; private set; }
 
     private async void Start()
     {
@@ -27,5 +28,6 @@ public class GameManager : MySerializedSingleton<GameManager>
         }
 
         AudioController.Instance.Play(Audios.Music.BaseSong);
+        Loaded = true;
     }
 }
