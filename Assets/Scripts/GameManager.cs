@@ -25,5 +25,7 @@ public class GameManager : MySerializedSingleton<GameManager>
         {
             await controller.Setup();
         }
+
+        AudioController.Instance.Play(Audios.Music.BaseSong);
     }
 }
