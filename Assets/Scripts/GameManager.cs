@@ -8,6 +8,10 @@ public class GameManager : MySerializedSingleton<GameManager>
     private Camera uiCamera;
     [SerializeField]
     private List<IController> controller;
+    [SerializeField]
+    private List<ITickeable> tickeables;
+    [SerializeField]
+    private List<IFixedTickeable> fixedTickeables;
 
     public Camera Cam { get => uiCamera; }
     public bool Loaded { get; private set; }
@@ -32,5 +36,21 @@ public class GameManager : MySerializedSingleton<GameManager>
 
         FadeController.Instance.InstantFade();
         _=FadeController.Instance.Unfade();
+    }
+
+    private void Update()
+    {
+        if (Loaded)
+        {
+            tickeables.ForEach(t => t.Tick());
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Loaded)
+        {
+            fixedTickeables.ForEach(t => t.FixedTick());
+        }
     }
 }
