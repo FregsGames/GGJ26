@@ -29,5 +29,8 @@ public class GameManager : MySerializedSingleton<GameManager>
 
         AudioController.Instance.Play(Audios.Music.BaseSong);
         Loaded = true;
+
+        FadeController.Instance.InstantFade();
+        _=FadeController.Instance.Unfade();
     }
 }
