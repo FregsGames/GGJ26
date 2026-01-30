@@ -1,3 +1,4 @@
+using Assets.SimpleLocalization.Scripts;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ public class GameManager : MySerializedSingleton<GameManager>
 
     private async void Start()
     {
+        LocalizationManager.Language = "Spanish";
+        LocalizationManager.Read();
+
         foreach (var controller in controller)
         {
             await controller.Prepare();

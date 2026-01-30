@@ -40,7 +40,7 @@ public class BlockController : MySerializedSingleton<BlockController>, IControll
 
         filter.SetActive(true);
         block.Add(t, (t.parent, t.GetSiblingIndex()));
-        t.SetParent(transform, false);
+        t.SetParent(canvas.transform, false);
         t.SetAsLastSibling();
     }
 
