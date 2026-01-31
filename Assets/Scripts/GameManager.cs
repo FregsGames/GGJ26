@@ -1,5 +1,7 @@
 using Assets.SimpleLocalization.Scripts;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MySerializedSingleton<GameManager>
@@ -15,6 +17,14 @@ public class GameManager : MySerializedSingleton<GameManager>
 
     public Camera Cam { get => uiCamera; }
     public bool Loaded { get; private set; }
+
+    [Button]
+    public void AssingControllers()
+    {
+        controller = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<IController>().ToList();
+        tickeables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<ITickeable>().ToList();
+        fixedTickeables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<IFixedTickeable>().ToList();
+    }
 
     private async void Start()
     {
