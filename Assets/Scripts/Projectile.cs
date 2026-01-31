@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public async UniTask Move(float timeToLive, Vector3 direction, float speed)
+    private string targetTag;
+
+    public async UniTask Move(float timeToLive, Vector3 direction, float speed, string targetTag)
     {
+        this.targetTag = targetTag;
+
         var elapsedTime = .0f;
 
         while (elapsedTime < timeToLive)
@@ -26,9 +30,17 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == targetTag)
         {
-            PlayerHealthController.Instance.ReceiveDamage(5);
+            if(targetTag == "Player")
+            {
+                PlayerHealthController.Instance.ReceiveDamage(5);
+            }
+            else
+            {
+                EnemySpawnerController.Instance.DamageEnemy(collision.GetComponent<Enemy>(), 5);
+            }
+
             Destroy(gameObject);
         }
         else

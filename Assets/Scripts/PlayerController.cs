@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private float maxSpeed;
+    [SerializeField]
+    private ShootController shootController;
 
     private float horizontal;
     private float vertical;
@@ -20,6 +22,11 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            shootController.Shot();
+        }
     }
 
     public void FixedTick()

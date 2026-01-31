@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class Shooter : MonoBehaviour
 {
@@ -42,7 +41,13 @@ public class Shooter : MonoBehaviour
     private async void Shot(int delay, Vector3 pos)
     {
         await UniTask.Delay(delay);
+
+        if(this == null || gameObject == null || enemyAnimation == null)
+        {
+            return;
+        }
+
         var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
-        _ = p.Move(5, (pos - transform.position).normalized, 10);
+        _ = p.Move(5, (pos - transform.position).normalized, 10, "Player");
     }
 }

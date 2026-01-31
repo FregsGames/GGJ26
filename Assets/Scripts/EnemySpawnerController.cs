@@ -1,12 +1,9 @@
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector.Editor.Validation;
-using Sirenix.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
+public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerController>, IController, ITickeable
 {
     [SerializeField]
     private List<Enemy> enemyPrefabs;
@@ -42,7 +39,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
             enemy.Tick(player);
         }
 
-        if(timeSinceLastSpawn >= spawnRate && enemies.Count < maxEnemyCount)
+        if (timeSinceLastSpawn >= spawnRate && enemies.Count < maxEnemyCount)
         {
             SpawnEnemy();
         }
@@ -60,7 +57,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 
         var enemy = Instantiate(enemyPrefabs[index], CloserSpawnPointToPlayer(), Quaternion.identity);
         enemy.Setup();
-        
+
         enemies.Add(enemy);
     }
 
@@ -68,5 +65,14 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     {
         var s = spawnPoint.OrderBy(s => Vector3.Distance(s.position, player.position)).First();
         return s.position;
+    }
+
+    public void DamageEnemy(Enemy enemy,float damage)
+    {
+        if (enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+            Destroy(enemy.gameObject);
+        }
     }
 }
