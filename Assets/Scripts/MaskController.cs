@@ -13,15 +13,18 @@ public class MaskController : MonoBehaviour, IController
     private Image maskImage;
     [SerializeField]
     private TextMeshProUGUI maskTmp;
+    [SerializeField]
+    private CharacterAnimation characterAnimation;
 
     private int index;
 
     public string Current { get => masks[index].id; }
+    public List<Sprite> CurrentSprites { get => masks[index].sprites; }
 
     public UniTask Prepare()
     {
         index = 0;
-        maskImage.color = masks[index].color;
+        maskImage.sprite = masks[index].sprites[0];
         maskTmp.text = masks[index].id.Localize();
 
         return UniTask.CompletedTask;
@@ -46,8 +49,10 @@ public class MaskController : MonoBehaviour, IController
             index = 0;
         }
 
-        maskImage.color = masks[index].color;
+        maskImage.sprite = masks[index].sprites[0];
         maskTmp.text = masks[index].id.Localize();
+
+        characterAnimation.UpdateMask();
 
     }
 }
@@ -55,6 +60,6 @@ public class MaskController : MonoBehaviour, IController
 [Serializable]
 public class MaskData
 {
-    public Color color;
+    public List<Sprite> sprites;
     public string id;
 }

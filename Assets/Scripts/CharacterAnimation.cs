@@ -10,6 +10,8 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
 
     [SerializeField]
     private SpriteRenderer sRenderer;
+    [SerializeField]
+    private SpriteRenderer maskSRenderer;
 
     [SerializeField]
     private List<Sprite> idleSprites;
@@ -25,10 +27,14 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
 
     [SerializeField]
     private PlayerController playerController;
+    [SerializeField]
+    private MaskController maskController;
 
     private List<Sprite> currentSprites;
     private float timeSinceLastUpdate = 0.0f;
     private int index = 0;
+
+    private Animations currentAnimation;
 
     public float AnimationDelay { get; set; }
 
@@ -46,8 +52,31 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
         return UniTask.CompletedTask;
     }
 
+    public void UpdateMask()
+    {
+        switch (currentAnimation)
+        {
+            case Animations.Idle:
+                maskSRenderer.sprite = maskController.CurrentSprites[0];
+                break;
+            case Animations.MoveForward:
+                maskSRenderer.sprite = maskController.CurrentSprites[0];
+                break;
+            case Animations.MoveBack:
+                maskSRenderer.sprite = maskController.CurrentSprites[1];
+                break;
+            case Animations.MoveSide:
+                maskSRenderer.sprite = maskController.CurrentSprites[2];
+                break;
+            default:
+                break;
+        }
+    }
+
     public void ChangeAnimation(Animations a)
     {
+        currentAnimation = a;
+
         switch (a)
         {
             case Animations.Idle:
@@ -55,24 +84,28 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
                 index = 0;
                 currentSprites = idleSprites;
                 AnimationDelay = animationDelays[0];
+                maskSRenderer.sprite = maskController.CurrentSprites[0];
                 break;
             case Animations.MoveForward:
                 sRenderer.sprite = frontSprites[0];
                 index = 0;
                 currentSprites = frontSprites;
                 AnimationDelay = animationDelays[1];
+                maskSRenderer.sprite = maskController.CurrentSprites[0];
                 break;
             case Animations.MoveBack:
                 sRenderer.sprite = backSprites[0];
                 index = 0;
                 currentSprites = backSprites;
                 AnimationDelay = animationDelays[2];
+                maskSRenderer.sprite = maskController.CurrentSprites[1];
                 break;
             case Animations.MoveSide:
                 sRenderer.sprite = sideSprites[0];
                 index = 0;
                 currentSprites = sideSprites;
                 AnimationDelay = animationDelays[3];
+                maskSRenderer.sprite = maskController.CurrentSprites[2];
                 break;
             default:
                 break;

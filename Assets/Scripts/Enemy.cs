@@ -9,17 +9,40 @@ public class Enemy : MonoBehaviour
     private Shooter shooter;
     [SerializeField]
     private EnemyAnimation enemyAnimation;
+    [SerializeField]
+    private float health;
 
     public NavMeshAgent Agent { get => agent; }
+    private float remainingHealth;
 
     public void Setup()
     {
+        remainingHealth = health;
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
 
         if (enemyAnimation != null)
         {
             enemyAnimation.Setup();
+        }
+    }
+
+    public bool Damage(float damage)
+    {
+        if(enemyAnimation != null)
+        {
+            enemyAnimation.Blink();
+        }
+
+        remainingHealth -= damage;
+
+        if(remainingHealth <= 0 )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

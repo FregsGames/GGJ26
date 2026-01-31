@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
 {
@@ -59,7 +60,14 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
 
         if (horizontal != 0)
         {
-            spriteRenderer.flipX = velocity.x > 0;
+            if(horizontal > 0)
+            {
+                spriteRenderer.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                spriteRenderer.transform.localScale = new Vector3(1, 1, 1);
+            }
         }
     }
 }

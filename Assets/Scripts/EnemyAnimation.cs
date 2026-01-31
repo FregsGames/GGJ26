@@ -7,7 +7,8 @@ public class EnemyAnimation : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer sRenderer;
-
+    [SerializeReference]
+    private SpriteRenderer maskRenderer;
     [SerializeField]
     private List<Sprite> sprites;
     [SerializeField]
@@ -19,12 +20,42 @@ public class EnemyAnimation : MonoBehaviour
 
     private bool doingOnce;
 
+    private bool blinking;
+
 
     public void Setup()
     {
         sRenderer.sprite = sprites[0];
         index = 0;
         currentSprites = sprites;
+        maskRenderer.color = new Color(1, 1, 1, 0);
+    }
+
+    public async void Blink()
+    {
+        if (blinking)
+            return;
+
+        blinking = true;
+
+        for (int i = 0; i < 3; i++)
+        {
+            maskRenderer.color = new Color(1, 1, 1, 1);
+            await UniTask.Delay(33);
+
+            if (this == null || gameObject == null || maskRenderer == null)
+                return;
+
+            maskRenderer.color = new Color(1, 1, 1, 0);
+
+            await UniTask.Delay(33);
+
+            if (this == null || gameObject == null || maskRenderer == null)
+                return;
+        }
+
+        
+        blinking = false;
     }
 
     public async void DoOnce(List<Sprite> animation)

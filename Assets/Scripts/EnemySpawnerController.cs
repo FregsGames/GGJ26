@@ -55,7 +55,7 @@ public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerControll
     {
         timeSinceLastSpawn = 0;
 
-        var index = Random.Range(0, enemyPrefabs.Count - 1);
+        var index = Random.Range(0, enemyPrefabs.Count);
 
         var enemy = Instantiate(enemyPrefabs[index], CloserSpawnPointToPlayer(), Quaternion.identity);
         enemy.Setup();
@@ -73,8 +73,13 @@ public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerControll
     {
         if (enemies.Contains(enemy))
         {
-            enemies.Remove(enemy);
-            Destroy(enemy.gameObject);
+            bool dead = enemy.Damage(damage);
+
+            if (dead)
+            {
+                enemies.Remove(enemy);
+                Destroy(enemy.gameObject);
+            }
 
             if(maskController.Current == "mask.life")
             {
