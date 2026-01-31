@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
     private float maxSpeed;
     [SerializeField]
     private ShootController shootController;
+    [SerializeField]
+    private MaskController maskController;
 
     private float horizontal;
     private float vertical;
@@ -23,9 +25,19 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             shootController.Shot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(1))
+        {
+            maskController.Swap(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            maskController.Swap(false);
         }
     }
 
