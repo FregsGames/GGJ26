@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDetector : MonoBehaviour, IController, ITickeable
@@ -11,6 +10,8 @@ public class EnemyDetector : MonoBehaviour, IController, ITickeable
     private PlayerHealthController healthController;
 
     private List<EnemyData> enemies;
+
+    public PlayerHealthController PlayerHealthController { get => healthController; }
 
     public UniTask Prepare()
     {
@@ -29,7 +30,7 @@ public class EnemyDetector : MonoBehaviour, IController, ITickeable
 
         foreach (var e in enemies)
         {
-            if(e.enemy == null || e.enemy.gameObject == null)
+            if (e.enemy == null || e.enemy.gameObject == null)
             {
                 toClear.Add(e.id);
             }
@@ -37,7 +38,7 @@ public class EnemyDetector : MonoBehaviour, IController, ITickeable
             {
                 e.remainingTime -= Time.deltaTime;
 
-                if(e.remainingTime <= 0)
+                if (e.remainingTime <= 0)
                 {
                     e.remainingTime = .5f;
                     healthController.ReceiveDamage(e.enemy.CollisionDamage);
@@ -50,7 +51,7 @@ public class EnemyDetector : MonoBehaviour, IController, ITickeable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             var enemy = collision.gameObject.GetComponent<Enemy>();
 

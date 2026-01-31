@@ -10,3 +10,6 @@ options,Opciones
 mask.life,Robar vida
 mask.damage,Extra daño
 mask.speed,Extra velocidad
+death,Has muerto. ¿Quieres jugar de nuevo?
+restart,Jugar
+quit,Salir

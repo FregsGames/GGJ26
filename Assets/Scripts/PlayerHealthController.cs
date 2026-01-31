@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthController : MySerializedSingleton<PlayerHealthController>, IController
+public class PlayerHealthController : MonoBehaviour, IController
 {
     [SerializeField]
     private float startingHealth;
@@ -25,6 +25,7 @@ public class PlayerHealthController : MySerializedSingleton<PlayerHealthControll
         if(currentHealth < 0)
         {
             currentHealth = 0;
+            GameManager.Instance.ResolveDeath();
         }
 
         healthBar.fillAmount = currentHealth / startingHealth;

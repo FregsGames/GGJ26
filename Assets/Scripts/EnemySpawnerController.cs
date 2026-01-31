@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerController>, IController, ITickeable
+public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 {
     [SerializeField]
     private List<Enemy> enemyPrefabs;
@@ -17,6 +17,8 @@ public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerControll
     private int maxEnemyCount;
     [SerializeField]
     private MaskController maskController;
+    [SerializeField]
+    private PlayerHealthController playerHealthController;
 
     private List<Enemy> enemies;
 
@@ -83,7 +85,7 @@ public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerControll
 
             if(maskController.Current == "mask.life")
             {
-                PlayerHealthController.Instance.Heal(damage * 0.5f);
+                playerHealthController.Heal(damage * 0.5f);
             }
         }
     }

@@ -6,7 +6,6 @@ public class Projectile : MonoBehaviour
     private string targetTag;
     private float damage;
 
-
     public async UniTask Move(float damage, float timeToLive, Vector3 direction, float speed, string targetTag)
     {
         this.damage = damage;
@@ -36,11 +35,11 @@ public class Projectile : MonoBehaviour
         {
             if(targetTag == "Player")
             {
-                PlayerHealthController.Instance.ReceiveDamage(damage);
+                collision.GetComponentInChildren<EnemyDetector>().PlayerHealthController.ReceiveDamage(damage);
             }
             else
             {
-                EnemySpawnerController.Instance.DamageEnemy(collision.GetComponent<Enemy>(), damage);
+                FindFirstObjectByType<EnemySpawnerController>().DamageEnemy(collision.GetComponent<Enemy>(), damage);
             }
 
             Destroy(gameObject);

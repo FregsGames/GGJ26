@@ -1,8 +1,10 @@
 using Assets.SimpleLocalization.Scripts;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MySerializedSingleton<GameManager>
 {
@@ -30,7 +32,14 @@ public class GameManager : MySerializedSingleton<GameManager>
     {
         LocalizationManager.Language = "Spanish";
         LocalizationManager.Read();
+        await PrepareControllers();
 
+        FadeController.Instance.InstantFade();
+        _ = FadeController.Instance.Unfade();
+    }
+
+    private async UniTask PrepareControllers()
+    {
         foreach (var controller in controller)
         {
             await controller.Prepare();
@@ -43,9 +52,29 @@ public class GameManager : MySerializedSingleton<GameManager>
 
         AudioController.Instance.Play(Audios.Music.BaseSong);
         Loaded = true;
+    }
 
-        FadeController.Instance.InstantFade();
-        _=FadeController.Instance.Unfade();
+    public async void ResolveDeath()
+    {
+        Time.timeScale = 0.0f;
+        bool restart = await ConfirmationController.Instance.AskForConfirmation("death".Localize(), "restart".Localize(), "quit".Localize());
+        await FadeController.Instance.Fade();
+        Loaded = false;
+        if (restart)
+        {
+            await SceneManager.LoadSceneAsync("Game");
+            uiCamera = Camera.main;
+            AssingControllers();
+            Time.timeScale = 1.0f;
+
+            await PrepareControllers();
+            Loaded= true;
+            _ = FadeController.Instance.Unfade();
+        }
+        else
+        {
+            Application.Quit();
+        }
     }
 
     private void Update()
