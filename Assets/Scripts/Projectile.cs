@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
 
     public async UniTask Move(float damage, float timeToLive, Vector3 direction, float speed, string targetTag)
     {
+        transform.right = direction;
+
         this.damage = damage;
         this.targetTag = targetTag;
 

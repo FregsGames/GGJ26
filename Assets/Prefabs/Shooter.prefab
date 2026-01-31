@@ -231,6 +231,7 @@ MonoBehaviour:
   enemyAnimation: {fileID: 4339684514407399556}
   health: 10
   collisionDamage: 5
+  dead: 0
 --- !u!114 &6769972929204754833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 304a0d2516c7586428ed3494da4a5759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2077876139429658353, guid: fd626028567593647a3a39ab44ab888f, type: 3}
+  projectilePrefab: {fileID: 2077876139429658353, guid: 8ff0f4b472458004388e96a397ca4a4b, type: 3}
   shotRate: 3
   shotDistance: 7
   shootAnimation:

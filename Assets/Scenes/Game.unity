@@ -521,6 +521,8 @@ MonoBehaviour:
     densityMultiplier: 0.2
   - prefab: {fileID: 2908897103310578820, guid: eacb5b97187eb5c4c9131974e6b7aed5, type: 3}
     densityMultiplier: 0.2
+  - prefab: {fileID: 2862440189019590476, guid: 59dd1a1643203684d89f5f29966d5ce2, type: 3}
+    densityMultiplier: 0.1
   sRenderer: {fileID: 654516117}
   size: 100
   baseElementDensity: 1
@@ -7112,7 +7114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 839501159}
   shotPos: {fileID: 839501159}
-  projectilePrefab: {fileID: 2077876139429658353, guid: 8ff0f4b472458004388e96a397ca4a4b, type: 3}
+  projectilePrefab: {fileID: 2077876139429658353, guid: fd626028567593647a3a39ab44ab888f, type: 3}
   shotTarget: {fileID: 1788369867}
   maskController: {fileID: 1614860124}
   baseDamage: 5
