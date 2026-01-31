@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: 2bc2fe2adb8f25b4391ed4c3cc54fe68
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7987694485144415997
+    second: Cosas_0
+  - first:
+      213: -2686129690973901847
+    second: Cosas_1
+  - first:
+      213: -8988977782189110108
+    second: Cosas_2
+  - first:
+      213: 3402582808874243170
+    second: Cosas_3
+  - first:
+      213: -3836028592124716094
+    second: Cosas_4
+  - first:
+      213: -9131035951772677914
+    second: Cosas_5
+  - first:
+      213: 3699817403020265927
+    second: Cosas_6
+  - first:
+      213: -1115380015511579666
+    second: Cosas_7
+  - first:
+      213: -8314921922823289437
+    second: Cosas_8
+  - first:
+      213: 4833307789001752040
+    second: Cosas_9
+  - first:
+      213: 8357975302307775310
+    second: Cosas_10
+  - first:
+      213: 671888011590931347
+    second: Cosas_11
+  - first:
+      213: -304607705508963465
+    second: Cosas_12
+  - first:
+      213: -4150861420388428571
+    second: Cosas_13
+  - first:
+      213: 7551510827111188041
+    second: Cosas_14
+  - first:
+      213: 1752361171631636796
+    second: Cosas_15
+  - first:
+      213: -2979286478851618276
+    second: Cosas_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cosas_0
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 815
+        width: 236
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301de96bf22062190800000000000000
+      internalID: -7987694485144415997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_1
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 839
+        width: 328
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebeedc1743f8bad0800000000000000
+      internalID: -2686129690973901847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_2
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 864
+        width: 196
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac4dbe255cb04380800000000000000
+      internalID: -8988977782189110108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_4
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 854
+        width: 126
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb1a22d150b3cac0800000000000000
+      internalID: -3836028592124716094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 881
+        width: 237
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e8c44f1e2b084180800000000000000
+      internalID: -9131035951772677914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_7
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 783
+        width: 194
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3dcd119cf5580f0800000000000000
+      internalID: -1115380015511579666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 446
+        width: 326
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edf39d73db531340800000000000000
+      internalID: 4833307789001752040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_10
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 371
+        width: 412
+        height: 411
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e430b87414e7df370800000000000000
+      internalID: 8357975302307775310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_11
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 636
+        width: 112
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39398b33696035900800000000000000
+      internalID: 671888011590931347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_13
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 452
+        width: 628
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4dfd5c78d2566c0800000000000000
+      internalID: -4150861420388428571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_15
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 197
+        width: 208
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c318a418333a15810800000000000000
+      internalID: 1752361171631636796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cosas_16
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 240
+        width: 564
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1accef7bb277a6d0800000000000000
+      internalID: -2979286478851618276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 44fddf8e7f507ae4f8927765bcde36d2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cosas_0: -7987694485144415997
+      Cosas_1: -2686129690973901847
+      Cosas_10: 8357975302307775310
+      Cosas_11: 671888011590931347
+      Cosas_12: -304607705508963465
+      Cosas_13: -4150861420388428571
+      Cosas_14: 7551510827111188041
+      Cosas_15: 1752361171631636796
+      Cosas_16: -2979286478851618276
+      Cosas_2: -8988977782189110108
+      Cosas_3: 3402582808874243170
+      Cosas_4: -3836028592124716094
+      Cosas_5: -9131035951772677914
+      Cosas_6: 3699817403020265927
+      Cosas_7: -1115380015511579666
+      Cosas_8: -8314921922823289437
+      Cosas_9: 4833307789001752040
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

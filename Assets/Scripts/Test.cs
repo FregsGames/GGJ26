@@ -20,5 +20,10 @@ public class Test : MonoBehaviour
         {
             FindFirstObjectByType<PlayerHealthController>().ReceiveDamage(100);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GameManager.Instance.ResolveDeath();
+        }
     }
 }

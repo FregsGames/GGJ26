@@ -1,15 +1,11 @@
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 {
     [SerializeField]
     private List<Enemy> enemyPrefabs;
-    [SerializeField]
-    private List<Transform> spawnPoint;
     [SerializeField]
     private Transform player;
     [SerializeField]
@@ -24,6 +20,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     private List<Enemy> enemies;
 
     private float timeSinceLastSpawn;
+
 
     public UniTask Prepare()
     {
@@ -60,31 +57,42 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 
         var index = Random.Range(0, enemyPrefabs.Count);
 
-        var enemy = Instantiate(enemyPrefabs[index], CloserSpawnPointToPlayer(), Quaternion.identity);
+        var enemy = Instantiate(enemyPrefabs[index], GetSpawnPoint(), Quaternion.identity);
         enemy.Setup();
 
         enemies.Add(enemy);
     }
 
-    private Vector3 CloserSpawnPointToPlayer()
+    private Vector3 GetSpawnPoint()
     {
-        var s = spawnPoint.OrderBy(s => Vector3.Distance(s.position, player.position)).First();
-        return s.position;
+        var playerPos = player.transform.position;
+
+        var direction = new Vector3(Random.value, Random.value).normalized;
+
+        while (direction.magnitude == 0)
+        {
+            direction = new Vector3(Random.value, Random.value).normalized;
+        }
+
+
+        return playerPos + direction * 10;
     }
 
-    public void DamageEnemy(Enemy enemy,float damage)
+    public void DamageEnemy(Enemy enemy, float damage)
     {
         if (enemies.Contains(enemy))
         {
+            FindFirstObjectByType<ExplosionController>().Explosion(enemy.transform.position, 15);
+
             bool dead = enemy.Damage(damage);
 
             if (dead)
             {
                 enemies.Remove(enemy);
-                enemy.Kill();
+                _ = enemy.Kill();
             }
 
-            if(maskController.Current == "mask.life")
+            if (maskController.Current == "mask.life")
             {
                 playerHealthController.Heal(damage * 0.5f);
             }
