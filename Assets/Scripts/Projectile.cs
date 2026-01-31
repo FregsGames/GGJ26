@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
 
         while (elapsedTime < timeToLive)
         {
-            if (gameObject == null)
+            if (this == null)
                 return;
 
             transform.position += direction * Time.deltaTime * speed;
@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
             await UniTask.Yield();
         }
 
-        if (gameObject == null)
+        if (this == null)
             return;
 
         Destroy(gameObject);

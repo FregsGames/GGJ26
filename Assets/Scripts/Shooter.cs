@@ -1,4 +1,7 @@
+using Cysharp.Threading.Tasks;
+using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class Shooter : MonoBehaviour
 {
@@ -8,6 +11,12 @@ public class Shooter : MonoBehaviour
     private float shotRate;
     [SerializeField]
     private float shotDistance;
+    [SerializeField]
+    private List<Sprite> shootAnimation;
+    [SerializeField]
+    private EnemyAnimation enemyAnimation;
+    [SerializeField]
+    private Transform shotPos;
 
     private float timeSinceLastShot;
 
@@ -23,10 +32,17 @@ public class Shooter : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, pos) < shotDistance)
             {
+                enemyAnimation.DoOnce(shootAnimation);
                 timeSinceLastShot = 0;
-                var p = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-                _ = p.Move(5, (pos - transform.position).normalized, 10);
+                Shot(300, pos);
             }
         }
+    }
+
+    private async void Shot(int delay, Vector3 pos)
+    {
+        await UniTask.Delay(delay);
+        var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
+        _ = p.Move(5, (pos - transform.position).normalized, 10);
     }
 }

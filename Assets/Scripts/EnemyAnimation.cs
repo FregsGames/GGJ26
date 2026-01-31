@@ -17,6 +17,8 @@ public class EnemyAnimation : MonoBehaviour
     private float timeSinceLastUpdate = 0.0f;
     private int index = 0;
 
+    private bool doingOnce;
+
 
     public void Setup()
     {
@@ -25,15 +27,37 @@ public class EnemyAnimation : MonoBehaviour
         currentSprites = sprites;
     }
 
-    public void Tick(NavMeshAgent navMesh)
+    public async void DoOnce(List<Sprite> animation)
     {
-        if (currentSprites == null)
+        doingOnce = true;
+
+        foreach (Sprite s in animation)
+        {
+            sRenderer.sprite = s;
+            await UniTask.Delay(Mathf.RoundToInt(1000* animationDelay));
+        }
+
+        doingOnce = false;
+    }
+
+    public void Tick(NavMeshAgent navMesh, Transform player)
+    {
+        if (currentSprites == null || doingOnce)
             return;
 
-        if(navMesh.velocity.magnitude != 0)
+        if((player.position - transform.position).normalized.x < 0 && sRenderer.transform.localScale.x > 0)
         {
-            sRenderer.flipX = navMesh.velocity.x < 0;
+            sRenderer.transform.localScale = new Vector3(-1, 1, 1);
+        }
 
+        if ((player.position - transform.position).normalized.x > 0 && sRenderer.transform.localScale.x < 0)
+        {
+            sRenderer.transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (navMesh.velocity.magnitude != 0)
+        {
+            
             if (timeSinceLastUpdate >= animationDelay)
             {
                 index++;
@@ -41,6 +65,7 @@ public class EnemyAnimation : MonoBehaviour
                 if (index >= currentSprites.Count)
                 {
                     index = 0;
+                    currentSprites = sprites;
                 }
 
                 sRenderer.sprite = currentSprites[index];

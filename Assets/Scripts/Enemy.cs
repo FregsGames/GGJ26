@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     {
         if(enemyAnimation != null)
         {
-            enemyAnimation.Tick(agent);
+            enemyAnimation.Tick(agent, player);
         }
 
         if(shooter != null)
