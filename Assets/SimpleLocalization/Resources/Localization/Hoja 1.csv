@@ -13,3 +13,8 @@ mask.speed,Extra velocidad
 death,Has muerto. ¿Quieres jugar de nuevo?
 restart,Jugar
 quit,Salir
+play,Jugar
+credits,Créditos
+credits.value,Hecho por Bita y Nacho.
+nice,Genial
+cameraShake,Camera shake

@@ -14,7 +14,11 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
     [SerializeField]
     private Slider effectsVol;
     [SerializeField]
+    private Toggle shake;
+    [SerializeField]
     private Button closeButton;
+
+    public bool Shake { get; set; }
 
     private void OnEnable()
     {
@@ -22,6 +26,13 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
         musicVol.onValueChanged.AddListener(UpdateMusic);
         effectsVol.onValueChanged.AddListener(UpdateEffect);
         openOptionsButton.onClick.AddListener(OpenPanel);
+        shake.onValueChanged.AddListener(ToggleShake);
+    }
+
+    private void ToggleShake(bool active)
+    {
+        PlayerPrefs.SetInt("shake", active? 1 : 0);
+        Shake = active;
     }
 
     private void UpdateMusic(float vol)
@@ -57,6 +68,7 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
         musicVol.onValueChanged.RemoveListener(UpdateMusic);
         effectsVol.onValueChanged.RemoveListener(UpdateEffect);
         openOptionsButton.onClick.RemoveListener(OpenPanel);
+        shake.onValueChanged.RemoveListener(ToggleShake);
     }
 
     public UniTask Prepare()
@@ -67,6 +79,8 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
         musicVol.SetValueWithoutNotify(PlayerPrefs.GetFloat("musicVol", 1));
         effectsVol.SetValueWithoutNotify(PlayerPrefs.GetFloat("sfxVol", 1));
 
+        shake.SetIsOnWithoutNotify(PlayerPrefs.GetInt("shake", 1) == 1);
+        Shake = PlayerPrefs.GetInt("shake", 1) == 1;
         return UniTask.CompletedTask;
     }
 

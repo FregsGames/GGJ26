@@ -20,6 +20,8 @@ public class GameManager : MySerializedSingleton<GameManager>
     public Camera Cam { get => uiCamera; }
     public bool Loaded { get; private set; }
 
+    public bool AlreadyStarted { get; set; }
+
     [Button]
     public void AssingControllers()
     {
@@ -36,6 +38,8 @@ public class GameManager : MySerializedSingleton<GameManager>
 
         FadeController.Instance.InstantFade();
         _ = FadeController.Instance.Unfade();
+
+        AlreadyStarted = true;
     }
 
     private async UniTask PrepareControllers()

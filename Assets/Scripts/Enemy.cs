@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +15,8 @@ public class Enemy : MonoBehaviour
     private float health;
     [SerializeField]
     private float collisionDamage;
+
+    public bool dead;
 
     public NavMeshAgent Agent { get => agent; }
     public float CollisionDamage { get => collisionDamage; }
@@ -32,6 +36,9 @@ public class Enemy : MonoBehaviour
 
     public bool Damage(float damage)
     {
+        if (dead)
+            return false;
+
         if(enemyAnimation != null)
         {
             enemyAnimation.Blink();
@@ -51,7 +58,10 @@ public class Enemy : MonoBehaviour
 
     public void Tick(Transform player)
     {
-        if(enemyAnimation != null)
+        if (dead)
+            return;
+
+        if (enemyAnimation != null)
         {
             enemyAnimation.Tick(agent, player);
         }
@@ -70,5 +80,13 @@ public class Enemy : MonoBehaviour
         {
             agent.SetDestination(player.position);
         }
+    }
+
+    public async UniTask Kill()
+    {
+        agent.isStopped = true;
+        GetComponent<Collider2D>().enabled = false;
+        await transform.DOScale(0, .5f).AsyncWaitForCompletion();
+        Destroy(gameObject);
     }
 }

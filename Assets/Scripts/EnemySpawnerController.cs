@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -80,7 +81,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
             if (dead)
             {
                 enemies.Remove(enemy);
-                Destroy(enemy.gameObject);
+                enemy.Kill();
             }
 
             if(maskController.Current == "mask.life")

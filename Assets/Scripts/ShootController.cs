@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class ShootController : MonoBehaviour, ITickeable
@@ -14,6 +15,8 @@ public class ShootController : MonoBehaviour, ITickeable
     private MaskController maskController;
     [SerializeField]
     private float baseDamage;
+    [SerializeField]
+    private CinemachineImpulseSource impulseSource;
 
     private Vector3 direction;
 
@@ -29,7 +32,15 @@ public class ShootController : MonoBehaviour, ITickeable
 
     public void Shot()
     {
+        if (Time.timeScale < 1)
+            return;
+
         var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
         _ = p.Move(maskController.Current == "mask.damage"? baseDamage * 3 : baseDamage, 5, direction, 10, "Enemy");
+
+        if (OptionsController.Instance.Shake)
+        {
+            impulseSource.GenerateImpulse();
+        }
     }
 }
