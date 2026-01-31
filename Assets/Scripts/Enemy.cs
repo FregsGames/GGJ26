@@ -11,8 +11,11 @@ public class Enemy : MonoBehaviour
     private EnemyAnimation enemyAnimation;
     [SerializeField]
     private float health;
+    [SerializeField]
+    private float collisionDamage;
 
     public NavMeshAgent Agent { get => agent; }
+    public float CollisionDamage { get => collisionDamage; }
     private float remainingHealth;
 
     public void Setup()

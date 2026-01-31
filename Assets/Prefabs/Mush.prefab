@@ -198,6 +198,7 @@ MonoBehaviour:
   shooter: {fileID: 0}
   enemyAnimation: {fileID: 4339684514407399556}
   health: 15
+  collisionDamage: 5
 --- !u!114 &4339684514407399556
 MonoBehaviour:
   m_ObjectHideFlags: 0

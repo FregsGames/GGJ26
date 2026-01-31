@@ -1,7 +1,5 @@
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour, ITickeable, IController
@@ -58,15 +56,19 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
         {
             case Animations.Idle:
                 maskSRenderer.sprite = maskController.CurrentSprites[0];
+                maskSRenderer.sortingOrder = 3;
                 break;
             case Animations.MoveForward:
                 maskSRenderer.sprite = maskController.CurrentSprites[0];
+                maskSRenderer.sortingOrder =3;
                 break;
             case Animations.MoveBack:
                 maskSRenderer.sprite = maskController.CurrentSprites[1];
+                maskSRenderer.sortingOrder = 1;
                 break;
             case Animations.MoveSide:
                 maskSRenderer.sprite = maskController.CurrentSprites[2];
+                maskSRenderer.sortingOrder = 3;
                 break;
             default:
                 break;
@@ -76,6 +78,7 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
     public void ChangeAnimation(Animations a)
     {
         currentAnimation = a;
+        UpdateMask();
 
         switch (a)
         {
@@ -84,28 +87,24 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
                 index = 0;
                 currentSprites = idleSprites;
                 AnimationDelay = animationDelays[0];
-                maskSRenderer.sprite = maskController.CurrentSprites[0];
                 break;
             case Animations.MoveForward:
                 sRenderer.sprite = frontSprites[0];
                 index = 0;
                 currentSprites = frontSprites;
                 AnimationDelay = animationDelays[1];
-                maskSRenderer.sprite = maskController.CurrentSprites[0];
                 break;
             case Animations.MoveBack:
                 sRenderer.sprite = backSprites[0];
                 index = 0;
                 currentSprites = backSprites;
                 AnimationDelay = animationDelays[2];
-                maskSRenderer.sprite = maskController.CurrentSprites[1];
                 break;
             case Animations.MoveSide:
                 sRenderer.sprite = sideSprites[0];
                 index = 0;
                 currentSprites = sideSprites;
                 AnimationDelay = animationDelays[3];
-                maskSRenderer.sprite = maskController.CurrentSprites[2];
                 break;
             default:
                 break;
@@ -119,11 +118,11 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
 
         if (playerController.Velocity.magnitude != 0 && currentSprites == idleSprites)
         {
-            if(playerController.Velocity.x != 0)
+            if (playerController.Velocity.x != 0)
             {
                 ChangeAnimation(Animations.MoveSide);
             }
-            else if(playerController.Velocity.y != 0)
+            else if (playerController.Velocity.y != 0)
             {
                 MoveFronBack();
             }
@@ -134,7 +133,7 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
         }
         else if (playerController.Velocity.magnitude != 0)
         {
-            if(currentSprites == sideSprites && playerController.Velocity.x == 0)
+            if (currentSprites == sideSprites && playerController.Velocity.x == 0)
             {
                 MoveFronBack();
             }

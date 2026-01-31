@@ -768,7 +768,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1991551716799858780, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4145,7 +4145,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5913758136074484702, guid: 7f5af2269eebadf41829174ee50a08d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8423,6 +8423,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1614860124}
+    - {fileID: 93417241}
     - {fileID: 579572613}
     - {fileID: 607145220}
     - {fileID: 770712331}
@@ -8447,7 +8448,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 12
+      Data: 13
     - Name: 
       Entry: 10
       Data: 0
@@ -8485,6 +8486,9 @@ MonoBehaviour:
       Entry: 10
       Data: 11
     - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -8495,19 +8499,22 @@ MonoBehaviour:
       Data: 1|System.Collections.Generic.List`1[[ITickeable, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
-    - Name: 
-      Entry: 10
-      Data: 12
-    - Name: 
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 10
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 10
       Data: 13
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 14
     - Name: 
       Entry: 13
       Data: 
@@ -8523,7 +8530,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 10
-      Data: 13
+      Data: 14
     - Name: 
       Entry: 13
       Data: 
