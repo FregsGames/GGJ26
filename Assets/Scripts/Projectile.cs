@@ -10,8 +10,11 @@ public class Projectile : MonoBehaviour
         while(elapsedTime < timeToLive)
         {
             transform.position += direction * Time.deltaTime * speed;
+            elapsedTime = Time.deltaTime;
             await UniTask.Yield();
         }
+
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

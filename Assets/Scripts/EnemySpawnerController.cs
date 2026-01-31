@@ -9,7 +9,7 @@ using UnityEngine.AI;
 public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 {
     [SerializeField]
-    private Enemy enemyPrefab;
+    private List<Enemy> enemyPrefabs;
     [SerializeField]
     private List<Transform> spawnPoint;
     [SerializeField]
@@ -39,7 +39,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     {
         foreach (var enemy in enemies)
         {
-            enemy.Agent.SetDestination(player.position);
+            enemy.Tick(player);
         }
 
         if(timeSinceLastSpawn >= spawnRate && enemies.Count < maxEnemyCount)
@@ -55,7 +55,10 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     private void SpawnEnemy()
     {
         timeSinceLastSpawn = 0;
-        var enemy = Instantiate(enemyPrefab, CloserSpawnPointToPlayer(), Quaternion.identity);
+
+        var index = Random.Range(0, enemyPrefabs.Count - 1);
+
+        var enemy = Instantiate(enemyPrefabs[index], CloserSpawnPointToPlayer(), Quaternion.identity);
         enemy.Agent.updateRotation = false;
         enemy.Agent.updateUpAxis = false;
         enemies.Add(enemy);
