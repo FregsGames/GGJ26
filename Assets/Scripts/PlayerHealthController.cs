@@ -8,7 +8,7 @@ public class PlayerHealthController : MonoBehaviour, IController
     private float startingHealth;
     [SerializeField]
     private Image healthBar;
-
+    [SerializeField]
     private float currentHealth;
 
     public UniTask Prepare()
