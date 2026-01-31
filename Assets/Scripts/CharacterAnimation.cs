@@ -116,6 +116,9 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
         if (currentSprites == null)
             return;
 
+        if (playerController.Velocity.magnitude == 0)
+            return;
+
         if (playerController.Velocity.magnitude != 0 && currentSprites == idleSprites)
         {
             if (playerController.Velocity.x != 0)
@@ -124,22 +127,26 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
             }
             else if (playerController.Velocity.y != 0)
             {
-                MoveFronBack();
+                MoveFrontBack();
             }
-        }
-        else if (playerController.Velocity.magnitude == 0 && currentSprites != idleSprites)
-        {
-            ChangeAnimation(Animations.Idle);
         }
         else if (playerController.Velocity.magnitude != 0)
         {
             if (currentSprites == sideSprites && playerController.Velocity.x == 0)
             {
-                MoveFronBack();
+                MoveFrontBack();
             }
             else if (currentSprites != sideSprites && playerController.Velocity.y == 0)
             {
                 ChangeAnimation(Animations.MoveSide);
+            }
+            else if (currentSprites == frontSprites && playerController.Velocity.y > 0)
+            {
+                MoveFrontBack();
+            }
+            else if (currentSprites == backSprites && playerController.Velocity.y < 0)
+            {
+                MoveFrontBack();
             }
         }
 
@@ -169,7 +176,7 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
         }
     }
 
-    private void MoveFronBack()
+    private void MoveFrontBack()
     {
         if (playerController.Velocity.y > 0)
         {

@@ -920,7 +920,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1991551716799858780, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
+  m_Sprite: {fileID: -4484432000504760811, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3226,15 +3226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febdbdc3037f5644f9ae38c04422d75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   enemyPrefabs:
   - {fileID: -4182167431066831741, guid: eb79ab17a53348b4da5766da52c00b3b, type: 3}
   - {fileID: -4182167431066831741, guid: 90784b1bb4709114f8f407415c77a6de, type: 3}
@@ -4459,7 +4450,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5913758136074484702, guid: 7f5af2269eebadf41829174ee50a08d7, type: 3}
+  m_Sprite: {fileID: -7363976681140164191, guid: a5f4019fbabf39e40a12b437568980cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6235,9 +6226,9 @@ MonoBehaviour:
     - {fileID: -1991551716799858780, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
     id: mask.damage
   - sprites:
-    - {fileID: 6283677431638504614, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
-    - {fileID: 6528668340850245748, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
-    - {fileID: -1991551716799858780, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
+    - {fileID: -4484432000504760811, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
+    - {fileID: 6615088795127792508, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
+    - {fileID: -6393583395310623584, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
     id: mask.speed
   - sprites:
     - {fileID: 6240287481542635396, guid: 9289be3f65da8354db852086fd6cce62, type: 3}
