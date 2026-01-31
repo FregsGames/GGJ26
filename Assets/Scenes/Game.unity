@@ -1766,7 +1766,7 @@ GameObject:
   - component: {fileID: 545624831}
   m_Layer: 7
   m_Name: Square (10)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3122,7 +3122,7 @@ GameObject:
   - component: {fileID: 902661238}
   m_Layer: 7
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3477,7 +3477,7 @@ GameObject:
   - component: {fileID: 983684161}
   m_Layer: 7
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5040,7 +5040,7 @@ GameObject:
   - component: {fileID: 1353235485}
   m_Layer: 7
   m_Name: Square (7)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5932,7 +5932,7 @@ GameObject:
   - component: {fileID: 1656410233}
   m_Layer: 7
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6114,7 +6114,7 @@ GameObject:
   - component: {fileID: 1664516832}
   m_Layer: 7
   m_Name: Square (8)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6355,7 +6355,7 @@ GameObject:
   - component: {fileID: 1670787629}
   m_Layer: 7
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7178,7 +7178,7 @@ GameObject:
   - component: {fileID: 1902944551}
   m_Layer: 7
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7584,7 +7584,7 @@ GameObject:
   - component: {fileID: 2011689043}
   m_Layer: 7
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7735,7 +7735,7 @@ GameObject:
   - component: {fileID: 2028566021}
   m_Layer: 7
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

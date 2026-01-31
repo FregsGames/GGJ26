@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.PlayerSettings;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,11 +7,29 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private Shooter shooter;
+    [SerializeField]
+    private EnemyAnimation enemyAnimation;
 
     public NavMeshAgent Agent { get => agent; }
 
+    public void Setup()
+    {
+        Agent.updateRotation = false;
+        Agent.updateUpAxis = false;
+
+        if (enemyAnimation != null)
+        {
+            enemyAnimation.Setup();
+        }
+    }
+
     public void Tick(Transform player)
     {
+        if(enemyAnimation != null)
+        {
+            enemyAnimation.Tick(agent);
+        }
+
         if(shooter != null)
         {
             shooter.Tick(player.position);

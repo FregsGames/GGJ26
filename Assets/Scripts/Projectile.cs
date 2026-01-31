@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -7,21 +8,33 @@ public class Projectile : MonoBehaviour
     {
         var elapsedTime = .0f;
 
-        while(elapsedTime < timeToLive)
+        while (elapsedTime < timeToLive)
         {
+            if (gameObject == null)
+                return;
+
             transform.position += direction * Time.deltaTime * speed;
             elapsedTime = Time.deltaTime;
             await UniTask.Yield();
         }
+
+        if (gameObject == null)
+            return;
 
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             PlayerHealthController.Instance.ReceiveDamage(5);
+            Destroy(gameObject);
+        }
+        else
+
+        if (collision.gameObject.tag == "Obstacle")
+        {
             Destroy(gameObject);
         }
     }

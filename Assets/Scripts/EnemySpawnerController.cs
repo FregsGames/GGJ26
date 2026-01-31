@@ -59,8 +59,8 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
         var index = Random.Range(0, enemyPrefabs.Count - 1);
 
         var enemy = Instantiate(enemyPrefabs[index], CloserSpawnPointToPlayer(), Quaternion.identity);
-        enemy.Agent.updateRotation = false;
-        enemy.Agent.updateUpAxis = false;
+        enemy.Setup();
+        
         enemies.Add(enemy);
     }
 
