@@ -527,6 +527,7 @@ MonoBehaviour:
   nav: {fileID: 254623731}
   confiner: {fileID: 1124004201}
   cam: {fileID: 578753661}
+  playerController: {fileID: 1579661657}
 --- !u!4 &79575682
 Transform:
   m_ObjectHideFlags: 0
@@ -6594,6 +6595,7 @@ MonoBehaviour:
   maxSpeed: 3
   shootController: {fileID: 1733850313}
   maskController: {fileID: 1614860124}
+  bounds: 0
 --- !u!4 &1579661658
 Transform:
   m_ObjectHideFlags: 0

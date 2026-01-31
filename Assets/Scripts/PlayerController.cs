@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
     private ShootController shootController;
     [SerializeField]
     private MaskController maskController;
+    public float bounds;
 
     private float horizontal;
     private float vertical;
@@ -44,8 +45,30 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
 
     public void FixedTick()
     {
+        if (player.transform.position.y >= bounds && vertical > 0)
+        {
+            vertical = 0;
+        }
+
+        if (player.transform.position.y <= -bounds && vertical < 0)
+        {
+            vertical = 0;
+        }
+
+        if (player.transform.position.x >= bounds && horizontal > 0)
+        {
+            horizontal = 0;
+        }
+
+        if(player.transform.position.x <= -bounds && horizontal < 0)
+        {
+            horizontal = 0;
+        }
+
         velocity.x = horizontal;
         velocity.y = vertical;
+
+        
 
         if(maskController.Current == "mask.speed")
         {

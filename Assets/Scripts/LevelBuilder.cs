@@ -21,6 +21,8 @@ public class LevelBuilder : MonoBehaviour, IController
     private BoxCollider2D confiner;
     [SerializeField]
     private GameObject cam;
+    [SerializeField]
+    private PlayerController playerController;
 
     public async UniTask Prepare()
     {
@@ -44,8 +46,8 @@ public class LevelBuilder : MonoBehaviour, IController
             }
 
         }
-
-        confiner.size = Vector2.one * size;
+        playerController.bounds = size * .75f * 0.5f;
+        confiner.size = Vector2.one * size * .75f;
         var confinerComponent = (CinemachineConfiner2D)cam.AddComponent(typeof(CinemachineConfiner2D));
         confinerComponent.BoundingShape2D = confiner;
 
