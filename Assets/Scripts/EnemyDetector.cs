@@ -55,9 +55,19 @@ public class EnemyDetector : MonoBehaviour, IController, ITickeable
         {
             var enemy = collision.gameObject.GetComponent<Enemy>();
 
-            if (!HasEnemy(enemy))
+            if (enemy.Explode)
             {
-                enemies.Add(new EnemyData(Guid.NewGuid().ToString(), enemy, .5f));
+                FindFirstObjectByType<ExplosionController>().Explosion(enemy.transform.position, 15, Color.red, 0.35f);
+                enemy.dead = true;
+                _ =enemy.Kill();
+                healthController.ReceiveDamage(enemy.CollisionDamage);
+            }
+            else
+            {
+                if (!HasEnemy(enemy))
+                {
+                    enemies.Add(new EnemyData(Guid.NewGuid().ToString(), enemy, .5f));
+                }
             }
         }
     }

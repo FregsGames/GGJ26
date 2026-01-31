@@ -17,17 +17,21 @@ public class Enemy : MonoBehaviour
     private float collisionDamage;
     [SerializeField]
     private bool explode;
+    [SerializeField]
+    private float exp;
 
     public bool dead;
 
     public NavMeshAgent Agent { get => agent; }
     public float CollisionDamage { get => collisionDamage; }
+    public float Exp { get => exp; }
     public bool Explode { get => explode; }
     private float remainingHealth;
 
-    public void Setup()
+    public void Setup(int playerLevel)
     {
-        remainingHealth = health;
+        remainingHealth = health + playerLevel;
+        agent.speed = agent.speed + playerLevel * 0.05f;
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
 

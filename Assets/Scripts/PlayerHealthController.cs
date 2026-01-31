@@ -22,7 +22,7 @@ public class PlayerHealthController : MonoBehaviour, IController
     {
         currentHealth -= damage;
 
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
             currentHealth = 0;
             GameManager.Instance.ResolveDeath();

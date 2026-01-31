@@ -38,10 +38,12 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
 
     public UniTask Prepare()
     {
+        currentAnimation = Animations.Idle;
         sRenderer.sprite = idleSprites[0];
         index = 0;
         currentSprites = idleSprites;
         AnimationDelay = animationDelays[0];
+        UpdateMask();
         return UniTask.CompletedTask;
     }
 

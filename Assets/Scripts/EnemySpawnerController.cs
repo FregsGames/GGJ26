@@ -11,21 +11,28 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     [SerializeField]
     private float spawnRate;
     [SerializeField]
+    private float minSpawnRate;
+    [SerializeField]
     private int maxEnemyCount;
     [SerializeField]
     private MaskController maskController;
     [SerializeField]
     private PlayerHealthController playerHealthController;
+    [SerializeField]
+    private ExpController expController;
 
     private List<Enemy> enemies;
 
     private float timeSinceLastSpawn;
 
+    public int MaxEnemyCount { get => maxEnemyCount + expController.Level; }
+    public float SpawnRate { get => Mathf.Clamp(spawnRate - expController.Level * 0.2f, minSpawnRate, spawnRate); }
+
 
     public UniTask Prepare()
     {
         enemies = new List<Enemy>();
-        timeSinceLastSpawn = spawnRate;
+        timeSinceLastSpawn = SpawnRate;
         return UniTask.CompletedTask;
     }
 
@@ -41,7 +48,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
             enemy.Tick(player);
         }
 
-        if (timeSinceLastSpawn >= spawnRate && enemies.Count < maxEnemyCount)
+        if (timeSinceLastSpawn >= SpawnRate && enemies.Count < MaxEnemyCount)
         {
             SpawnEnemy();
         }
@@ -58,7 +65,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
         var index = Random.Range(0, enemyPrefabs.Count);
 
         var enemy = Instantiate(enemyPrefabs[index], GetSpawnPoint(), Quaternion.identity);
-        enemy.Setup();
+        enemy.Setup(expController.Level);
 
         enemies.Add(enemy);
     }
@@ -95,6 +102,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
             {
                 enemies.Remove(enemy);
                 _ = enemy.Kill();
+                expController.Gain(enemy.Exp);
             }
 
             if (maskController.Current == "mask.life")

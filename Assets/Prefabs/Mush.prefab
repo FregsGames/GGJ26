@@ -199,6 +199,9 @@ MonoBehaviour:
   enemyAnimation: {fileID: 4339684514407399556}
   health: 15
   collisionDamage: 5
+  explode: 0
+  exp: 10
+  dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:
   m_ObjectHideFlags: 0
