@@ -229,7 +229,7 @@ MonoBehaviour:
   agent: {fileID: 3782472737975309046}
   shooter: {fileID: 6769972929204754833}
   enemyAnimation: {fileID: 4339684514407399556}
-  health: 10
+  health: 5
   collisionDamage: 5
   explode: 0
   exp: 5

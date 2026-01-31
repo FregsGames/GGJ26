@@ -2100,6 +2100,7 @@ RectTransform:
   - {fileID: 1129700308}
   - {fileID: 395380252}
   - {fileID: 801283842}
+  - {fileID: 488184961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2400,6 +2401,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484984796}
   m_CullTransparentMesh: 1
+--- !u!1 &488184960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488184961}
+  - component: {fileID: 488184963}
+  - component: {fileID: 488184962}
+  - component: {fileID: 488184964}
+  m_Layer: 5
+  m_Name: UpgradesContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &488184961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488184960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 398525056}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 600}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &488184962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488184960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &488184963
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488184960}
+  m_CullTransparentMesh: 1
+--- !u!114 &488184964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488184960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 20
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &513244853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,6 +3218,7 @@ MonoBehaviour:
   experienceBar: {fileID: 1835864688}
   requiredBaseExp: 50
   levelTMP: {fileID: 513244855}
+  upgradesController: {fileID: 1877414534}
 --- !u!4 &647856100
 Transform:
   m_ObjectHideFlags: 0
@@ -3888,7 +3992,7 @@ MonoBehaviour:
   - {fileID: -4182167431066831741, guid: 90784b1bb4709114f8f407415c77a6de, type: 3}
   - {fileID: -4182167431066831741, guid: 1cd329213b538494ebb723ee289b5553, type: 3}
   player: {fileID: 839501159}
-  spawnRate: 4
+  spawnRate: 3.5
   minSpawnRate: 0.1
   maxEnemyCount: 10
   maskController: {fileID: 1614860124}
@@ -6858,9 +6962,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 839501161}
   spriteRenderer: {fileID: 1078235853}
-  maxSpeed: 3
+  maxSpeed: 5
   shootController: {fileID: 1733850313}
   maskController: {fileID: 1614860124}
+  upgradesController: {fileID: 1877414534}
   bounds: 0
 --- !u!4 &1579661658
 Transform:
@@ -7384,6 +7489,7 @@ MonoBehaviour:
   baseDamage: 5
   impulseSource: {fileID: 839501163}
   expController: {fileID: 647856099}
+  upgradesController: {fileID: 1877414534}
   baseShotRate: 1
   minShotRate: 0.05
 --- !u!4 &1733850314
@@ -8571,6 +8677,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874411164}
   m_CullTransparentMesh: 1
+--- !u!1 &1877414533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877414535}
+  - component: {fileID: 1877414534}
+  m_Layer: 0
+  m_Name: UpgradesController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1877414534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877414533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d08e4370cb1a644e9e098b08ced86cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeElementPrefab: {fileID: 5318917542354964165, guid: bacfc82fee0e1a945b1e6221205ea6a6, type: 3}
+  upgradesContainer: {fileID: 488184961}
+  upgrades:
+  - id: upgrade.shotPoints
+    desc: upgrade.shotPoints.desc
+    sprite: {fileID: 6240287481542635396, guid: 9289be3f65da8354db852086fd6cce62, type: 3}
+    amount: 10
+  - id: upgrade.damage
+    desc: upgrade.damage.desc
+    sprite: {fileID: 6528668340850245748, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
+    amount: 10
+  - id: upgrade.health
+    desc: upgrade.health.desc
+    sprite: {fileID: -23605422331418882, guid: df93d27c8f0238147bdf74c3740ba722, type: 3}
+    amount: 10
+  - id: upgrade.speed
+    desc: upgrade.speed.desc
+    sprite: {fileID: -3496854166523516535, guid: 95ce69cd36a8a7d4e95733c993f8f2a8, type: 3}
+    amount: 10
+  - id: upgrade.shotspeed
+    desc: upgrade.shotspeed.desc
+    sprite: {fileID: -4484432000504760811, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
+    amount: 10
+--- !u!4 &1877414535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877414533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913091789
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,6 +9141,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 1877414534}
     - {fileID: 647856099}
     - {fileID: 45381717}
     - {fileID: 79575681}
@@ -8998,7 +9172,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 17
+      Data: 18
     - Name: 
       Entry: 10
       Data: 0
@@ -9051,6 +9225,9 @@ MonoBehaviour:
       Entry: 10
       Data: 16
     - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -9064,19 +9241,19 @@ MonoBehaviour:
       Data: 5
     - Name: 
       Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 10
-      Data: 8
+      Data: 5
     - Name: 
       Entry: 10
       Data: 9
     - Name: 
       Entry: 10
-      Data: 17
+      Data: 10
     - Name: 
       Entry: 10
       Data: 18
+    - Name: 
+      Entry: 10
+      Data: 19
     - Name: 
       Entry: 13
       Data: 
@@ -9092,7 +9269,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 10
-      Data: 17
+      Data: 18
     - Name: 
       Entry: 13
       Data: 
@@ -9359,6 +9536,7 @@ SceneRoots:
   - {fileID: 2010888252}
   - {fileID: 79575682}
   - {fileID: 647856100}
+  - {fileID: 1877414535}
   - {fileID: 1662749353}
   - {fileID: 398525056}
   - {fileID: 332879952}

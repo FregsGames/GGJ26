@@ -23,7 +23,7 @@ public class Test : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            GameManager.Instance.ResolveDeath();
+            FindFirstObjectByType<ExpController>().Gain(10);
         }
     }
 }

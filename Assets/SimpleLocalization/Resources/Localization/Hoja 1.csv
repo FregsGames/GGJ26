@@ -19,3 +19,13 @@ credits.value,Hecho por Bita y Nacho.
 nice,Genial
 cameraShake,Camera shake
 level,Nivel
+upgrade.shotPoints,Número de disparos
+upgrade.damage,Daño de disparos
+upgrade.speed,Velocidad
+upgrade.health,Salud
+upgrade.shotspeed,Velocidad de disparo
+upgrade.shotPoints.desc,Aumenta la cantidad de disparos simultáneos.
+upgrade.damage.desc,Aumenta el daño de los disparos.
+upgrade.speed.desc,Aumenta la velocidad de movimiento.
+upgrade.health.desc,Aumenta la salud en un 10% y te cura.
+upgrade.shotspeed.desc,Aumenta la velocidad de los disparos.

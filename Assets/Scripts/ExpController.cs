@@ -11,6 +11,8 @@ public class ExpController : MonoBehaviour, IController
     private float requiredBaseExp;
     [SerializeField]
     private TextMeshProUGUI levelTMP;
+    [SerializeField]
+    private UpgradesController upgradesController;
 
     private int level = 1;
 
@@ -39,8 +41,9 @@ public class ExpController : MonoBehaviour, IController
     public void LevelUp()
     {
         level++;
-        currentRequiredExp = currentRequiredExp * 1.05f;
+        currentRequiredExp = currentRequiredExp * 1.5f;
         levelTMP.text = "level".Localize() + " " + level.ToString();
+        upgradesController.ResolveLevelUp();
     }
 
     public UniTask Prepare()

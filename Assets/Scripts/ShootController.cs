@@ -1,4 +1,5 @@
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootController : MonoBehaviour, ITickeable
@@ -19,6 +20,8 @@ public class ShootController : MonoBehaviour, ITickeable
     private CinemachineImpulseSource impulseSource;
     [SerializeField]
     private ExpController expController;
+    [SerializeField]
+    private UpgradesController upgradesController;
 
     [SerializeField]
     private float baseShotRate;
@@ -55,8 +58,19 @@ public class ShootController : MonoBehaviour, ITickeable
         if (Time.timeScale < 1)
             return;
 
-        var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
-        _ = p.Move(maskController.Current == "mask.damage"? baseDamage * 3 : baseDamage, 5, direction, 10, "Enemy");
+        var count = 1 + upgradesController.Level("upgrade.shotPoints");
+        float angleStep = 360f / count;
+
+        for (int i = 0; i < count; i++)
+        {
+            float angle = angleStep * i;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            var d = rotation* direction.normalized;
+
+            var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
+            _ = p.Move(maskController.Current == "mask.damage" ? baseDamage * 3 : baseDamage, 5, d, 10, "Enemy");
+        }
+
 
         if (OptionsController.Instance.Shake)
         {

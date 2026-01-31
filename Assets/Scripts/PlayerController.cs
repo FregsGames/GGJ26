@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
     private ShootController shootController;
     [SerializeField]
     private MaskController maskController;
+    [SerializeField]
+    private UpgradesController upgradesController;
     public float bounds;
 
     private float horizontal;
@@ -72,11 +74,11 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
 
         if(maskController.Current == "mask.speed")
         {
-            velocity = velocity.normalized * maxSpeed * 3;
+            velocity = velocity.normalized * (maxSpeed + upgradesController.Level("upgrade.speed") * 0.1f) * 2;
         }
         else
         {
-            velocity = velocity.normalized * maxSpeed;
+            velocity = velocity.normalized * (maxSpeed + upgradesController.Level("upgrade.speed") * 0.1f);
         }
 
         player.linearVelocity = velocity;
