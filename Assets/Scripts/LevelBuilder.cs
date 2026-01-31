@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using NavMeshPlus.Components;
 using System;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour, IController
@@ -17,7 +18,9 @@ public class LevelBuilder : MonoBehaviour, IController
     [SerializeField]
     private NavMeshSurface nav;
     [SerializeField]
-    private GameObject spawnPointPrefab;
+    private BoxCollider2D confiner;
+    [SerializeField]
+    private GameObject cam;
 
     public async UniTask Prepare()
     {
@@ -41,8 +44,15 @@ public class LevelBuilder : MonoBehaviour, IController
             }
 
         }
+
+        confiner.size = Vector2.one * size;
+        var confinerComponent = (CinemachineConfiner2D)cam.AddComponent(typeof(CinemachineConfiner2D));
+        confinerComponent.BoundingShape2D = confiner;
+
         await UniTask.Yield();
         await nav.BuildNavMeshAsync();
+
+        
     }
 
     public UniTask Setup()
