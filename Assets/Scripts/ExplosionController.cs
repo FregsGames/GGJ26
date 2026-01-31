@@ -29,7 +29,7 @@ public class ExplosionController : MonoBehaviour, IController
         return UniTask.CompletedTask;
     }
 
-    public async void Explosion(Vector3 pos, int amount)
+    public async void Explosion(Vector3 pos, int amount, Color color, float baseBize)
     {
         var tempList = new List<GameObject>();
 
@@ -55,8 +55,9 @@ public class ExplosionController : MonoBehaviour, IController
         {
             e.transform.position = pos;
             e.SetActive(true);
-            var size = .35f +  Random.value * .25f;
+            var size = baseBize +  Random.value * .25f;
             e.transform.localScale = new Vector3(size, size, 1);
+            e.gameObject.GetComponent<SpriteRenderer>().color = color;
             var r = Quaternion.Euler(Vector3.forward * Random.value * 360);
             e.transform.rotation = r;
             e.transform.DOMove(pos + new Vector3(Random.Range(-radius, radius), Random.Range(-radius, radius)), 0.3f).SetEase(Ease.OutCubic);

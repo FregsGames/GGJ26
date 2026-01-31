@@ -197,8 +197,10 @@ MonoBehaviour:
   agent: {fileID: 3782472737975309046}
   shooter: {fileID: 0}
   enemyAnimation: {fileID: 4339684514407399556}
-  health: 15
+  health: 30
   collisionDamage: 5
+  explode: 1
+  dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:
   m_ObjectHideFlags: 0

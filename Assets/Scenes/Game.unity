@@ -3702,6 +3702,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: -4182167431066831741, guid: eb79ab17a53348b4da5766da52c00b3b, type: 3}
   - {fileID: -4182167431066831741, guid: 90784b1bb4709114f8f407415c77a6de, type: 3}
+  - {fileID: -4182167431066831741, guid: 1cd329213b538494ebb723ee289b5553, type: 3}
   player: {fileID: 839501159}
   spawnRate: 2
   maxEnemyCount: 10

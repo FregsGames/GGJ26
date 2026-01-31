@@ -82,9 +82,14 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     {
         if (enemies.Contains(enemy))
         {
-            FindFirstObjectByType<ExplosionController>().Explosion(enemy.transform.position, 15);
+            FindFirstObjectByType<ExplosionController>().Explosion(enemy.transform.position, 15, Color.white, 0.35f);
 
             bool dead = enemy.Damage(damage);
+
+            if (dead && enemy.Explode)
+            {
+                FindFirstObjectByType<ExplosionController>().Explosion(enemy.transform.position, 15, Color.red, 2f);
+            }
 
             if (dead)
             {

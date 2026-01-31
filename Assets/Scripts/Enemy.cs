@@ -15,11 +15,14 @@ public class Enemy : MonoBehaviour
     private float health;
     [SerializeField]
     private float collisionDamage;
+    [SerializeField]
+    private bool explode;
 
     public bool dead;
 
     public NavMeshAgent Agent { get => agent; }
     public float CollisionDamage { get => collisionDamage; }
+    public bool Explode { get => explode; }
     private float remainingHealth;
 
     public void Setup()
