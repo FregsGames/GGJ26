@@ -30,8 +30,8 @@ public class Enemy : MonoBehaviour
 
     public void Setup(int playerLevel)
     {
-        remainingHealth = health + playerLevel;
-        agent.speed = agent.speed + playerLevel * 0.05f;
+        remainingHealth = health + playerLevel * 2;
+        agent.speed = agent.speed + playerLevel * 0.1f;
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
 

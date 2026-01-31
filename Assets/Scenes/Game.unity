@@ -3889,7 +3889,7 @@ MonoBehaviour:
   - {fileID: -4182167431066831741, guid: 1cd329213b538494ebb723ee289b5553, type: 3}
   player: {fileID: 839501159}
   spawnRate: 4
-  minSpawnRate: 0.5
+  minSpawnRate: 0.1
   maxEnemyCount: 10
   maskController: {fileID: 1614860124}
   playerHealthController: {fileID: 987203129}
@@ -7383,6 +7383,9 @@ MonoBehaviour:
   maskController: {fileID: 1614860124}
   baseDamage: 5
   impulseSource: {fileID: 839501163}
+  expController: {fileID: 647856099}
+  baseShotRate: 1
+  minShotRate: 0.05
 --- !u!4 &1733850314
 Transform:
   m_ObjectHideFlags: 0

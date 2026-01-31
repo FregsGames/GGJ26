@@ -25,8 +25,8 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 
     private float timeSinceLastSpawn;
 
-    public int MaxEnemyCount { get => maxEnemyCount + expController.Level; }
-    public float SpawnRate { get => Mathf.Clamp(spawnRate - expController.Level * 0.2f, minSpawnRate, spawnRate); }
+    public int MaxEnemyCount { get => maxEnemyCount + expController.Level * 2; }
+    public float SpawnRate { get => Mathf.Clamp(spawnRate - expController.Level * 0.4f, minSpawnRate, spawnRate); }
 
 
     public UniTask Prepare()

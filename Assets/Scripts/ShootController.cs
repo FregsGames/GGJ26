@@ -17,7 +17,17 @@ public class ShootController : MonoBehaviour, ITickeable
     private float baseDamage;
     [SerializeField]
     private CinemachineImpulseSource impulseSource;
+    [SerializeField]
+    private ExpController expController;
 
+    [SerializeField]
+    private float baseShotRate;
+    [SerializeField]
+    private float minShotRate;
+
+    public float CurrentShotRate { get => Mathf.Clamp(baseShotRate - expController.Level * 0.1f, minShotRate, baseShotRate); }
+
+    private float timeSinceLastShot;
     private Vector3 direction;
 
     public void Tick()
@@ -28,6 +38,16 @@ public class ShootController : MonoBehaviour, ITickeable
         direction = (pos - shotPos.position).normalized;
 
         shotTarget.position = player.transform.position + direction * 3;
+
+        if(timeSinceLastShot < CurrentShotRate)
+        {
+            timeSinceLastShot += Time.deltaTime;
+        }
+        else
+        {
+            timeSinceLastShot = 0;
+            Shot();
+        }
     }
 
     public void Shot()
