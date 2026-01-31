@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthController : MonoBehaviour, IController
+public class PlayerHealthController : MySerializedSingleton<PlayerHealthController>, IController
 {
     [SerializeField]
     private float startingHealth;

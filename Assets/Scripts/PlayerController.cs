@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
 
         if (horizontal != 0)
         {
-            spriteRenderer.flipX = velocity.x < 0;
+            spriteRenderer.flipX = velocity.x > 0;
         }
     }
 }

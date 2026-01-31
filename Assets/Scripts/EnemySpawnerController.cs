@@ -9,7 +9,7 @@ using UnityEngine.AI;
 public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 {
     [SerializeField]
-    private NavMeshAgent enemyPrefab;
+    private Enemy enemyPrefab;
     [SerializeField]
     private List<Transform> spawnPoint;
     [SerializeField]
@@ -19,13 +19,13 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     [SerializeField]
     private int maxEnemyCount;
 
-    private List<NavMeshAgent> enemies;
+    private List<Enemy> enemies;
 
     private float timeSinceLastSpawn;
 
     public UniTask Prepare()
     {
-        enemies = new List<NavMeshAgent>();
+        enemies = new List<Enemy>();
         timeSinceLastSpawn = spawnRate;
         return UniTask.CompletedTask;
     }
@@ -39,7 +39,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     {
         foreach (var enemy in enemies)
         {
-            enemy.SetDestination(player.position);
+            enemy.Agent.SetDestination(player.position);
         }
 
         if(timeSinceLastSpawn >= spawnRate && enemies.Count < maxEnemyCount)
@@ -56,8 +56,8 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     {
         timeSinceLastSpawn = 0;
         var enemy = Instantiate(enemyPrefab, CloserSpawnPointToPlayer(), Quaternion.identity);
-        enemy.updateRotation = false;
-        enemy.updateUpAxis = false;
+        enemy.Agent.updateRotation = false;
+        enemy.Agent.updateUpAxis = false;
         enemies.Add(enemy);
     }
 

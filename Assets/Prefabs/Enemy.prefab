@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5363996019668681027}
   - component: {fileID: 3782472737975309046}
   - component: {fileID: 6975686481869431974}
+  - component: {fileID: -4182167431066831741}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -103,7 +104,7 @@ NavMeshAgent:
   m_Acceleration: 16
   avoidancePriority: 50
   m_AngularSpeed: 60
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.05
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -147,3 +148,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.05}
   m_Radius: 0.35
+--- !u!114 &-4182167431066831741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661503198952563025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620b5ff157acb154981a7884e3989b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 3782472737975309046}

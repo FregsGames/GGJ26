@@ -1,11 +1,12 @@
 using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
 public class CharacterAnimation : MonoBehaviour, ITickeable, IController
 {
-    public enum Animations { Idle, Run }
+    public enum Animations { Idle, MoveForward, MoveBack, MoveSide }
 
     [SerializeField]
     private SpriteRenderer sRenderer;
@@ -13,7 +14,11 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
     [SerializeField]
     private List<Sprite> idleSprites;
     [SerializeField]
-    private List<Sprite> moveSprites;
+    private List<Sprite> frontSprites;
+    [SerializeField]
+    private List<Sprite> sideSprites;
+    [SerializeField]
+    private List<Sprite> backSprites;
 
     [SerializeField]
     private float[] animationDelays;
@@ -51,11 +56,23 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
                 currentSprites = idleSprites;
                 AnimationDelay = animationDelays[0];
                 break;
-            case Animations.Run:
-                sRenderer.sprite = moveSprites[0];
+            case Animations.MoveForward:
+                sRenderer.sprite = frontSprites[0];
                 index = 0;
-                currentSprites = moveSprites;
+                currentSprites = frontSprites;
                 AnimationDelay = animationDelays[1];
+                break;
+            case Animations.MoveBack:
+                sRenderer.sprite = backSprites[0];
+                index = 0;
+                currentSprites = backSprites;
+                AnimationDelay = animationDelays[2];
+                break;
+            case Animations.MoveSide:
+                sRenderer.sprite = sideSprites[0];
+                index = 0;
+                currentSprites = sideSprites;
+                AnimationDelay = animationDelays[3];
                 break;
             default:
                 break;
@@ -69,11 +86,29 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
 
         if (playerController.Velocity.magnitude != 0 && currentSprites == idleSprites)
         {
-            ChangeAnimation(Animations.Run);
+            if(playerController.Velocity.x != 0)
+            {
+                ChangeAnimation(Animations.MoveSide);
+            }
+            else if(playerController.Velocity.y != 0)
+            {
+                MoveFronBack();
+            }
         }
-        else if (playerController.Velocity.magnitude == 0 && currentSprites == moveSprites)
+        else if (playerController.Velocity.magnitude == 0 && currentSprites != idleSprites)
         {
             ChangeAnimation(Animations.Idle);
+        }
+        else if (playerController.Velocity.magnitude != 0)
+        {
+            if(currentSprites == sideSprites && playerController.Velocity.x == 0)
+            {
+                MoveFronBack();
+            }
+            else if (currentSprites != sideSprites && playerController.Velocity.y == 0)
+            {
+                ChangeAnimation(Animations.MoveSide);
+            }
         }
 
         if (timeSinceLastUpdate >= AnimationDelay)
@@ -99,6 +134,18 @@ public class CharacterAnimation : MonoBehaviour, ITickeable, IController
         else
         {
             timeSinceLastUpdate += Time.deltaTime;
+        }
+    }
+
+    private void MoveFronBack()
+    {
+        if (playerController.Velocity.y > 0)
+        {
+            ChangeAnimation(Animations.MoveBack);
+        }
+        else
+        {
+            ChangeAnimation(Animations.MoveForward);
         }
     }
 }
