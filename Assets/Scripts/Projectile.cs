@@ -1,13 +1,15 @@
 using Cysharp.Threading.Tasks;
-using System.Threading;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     private string targetTag;
+    private float damage;
 
-    public async UniTask Move(float timeToLive, Vector3 direction, float speed, string targetTag)
+
+    public async UniTask Move(float damage, float timeToLive, Vector3 direction, float speed, string targetTag)
     {
+        this.damage = damage;
         this.targetTag = targetTag;
 
         var elapsedTime = .0f;
@@ -34,11 +36,11 @@ public class Projectile : MonoBehaviour
         {
             if(targetTag == "Player")
             {
-                PlayerHealthController.Instance.ReceiveDamage(5);
+                PlayerHealthController.Instance.ReceiveDamage(damage);
             }
             else
             {
-                EnemySpawnerController.Instance.DamageEnemy(collision.GetComponent<Enemy>(), 5);
+                EnemySpawnerController.Instance.DamageEnemy(collision.GetComponent<Enemy>(), damage);
             }
 
             Destroy(gameObject);

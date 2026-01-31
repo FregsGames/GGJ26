@@ -48,6 +48,6 @@ public class Shooter : MonoBehaviour
         }
 
         var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
-        _ = p.Move(5, (pos - transform.position).normalized, 10, "Player");
+        _ = p.Move(5, 5, (pos - transform.position).normalized, 10, "Player");
     }
 }

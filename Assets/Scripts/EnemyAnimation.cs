@@ -33,6 +33,9 @@ public class EnemyAnimation : MonoBehaviour
 
         foreach (Sprite s in animation)
         {
+            if (this == null || gameObject == null || sRenderer == null)
+                return;
+
             sRenderer.sprite = s;
             await UniTask.Delay(Mathf.RoundToInt(1000* animationDelay));
         }

@@ -2809,6 +2809,7 @@ MonoBehaviour:
   player: {fileID: 839501159}
   spawnRate: 2
   maxEnemyCount: 10
+  maskController: {fileID: 1614860124}
 --- !u!4 &770712332
 Transform:
   m_ObjectHideFlags: 0
@@ -5989,7 +5990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 839501161}
   spriteRenderer: {fileID: 1078235853}
-  maxSpeed: 10
+  maxSpeed: 3
   shootController: {fileID: 1733850313}
   maskController: {fileID: 1614860124}
 --- !u!4 &1579661658
@@ -6858,6 +6859,8 @@ MonoBehaviour:
   shotPos: {fileID: 839501159}
   projectilePrefab: {fileID: 2077876139429658353, guid: 8ff0f4b472458004388e96a397ca4a4b, type: 3}
   shotTarget: {fileID: 1788369867}
+  maskController: {fileID: 1614860124}
+  baseDamage: 5
 --- !u!4 &1733850314
 Transform:
   m_ObjectHideFlags: 0

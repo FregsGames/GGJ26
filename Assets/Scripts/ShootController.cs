@@ -10,6 +10,10 @@ public class ShootController : MonoBehaviour, ITickeable
     private Projectile projectilePrefab;
     [SerializeField]
     private Transform shotTarget;
+    [SerializeField]
+    private MaskController maskController;
+    [SerializeField]
+    private float baseDamage;
 
     private Vector3 direction;
 
@@ -26,6 +30,6 @@ public class ShootController : MonoBehaviour, ITickeable
     public void Shot()
     {
         var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
-        _ = p.Move(5, direction, 10, "Enemy");
+        _ = p.Move(maskController.Current == "mask.damage"? baseDamage * 3 : baseDamage, 5, direction, 10, "Enemy");
     }
 }

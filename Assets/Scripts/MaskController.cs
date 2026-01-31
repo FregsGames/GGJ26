@@ -16,6 +16,8 @@ public class MaskController : MonoBehaviour, IController
 
     private int index;
 
+    public string Current { get => masks[index].id; }
+
     public UniTask Prepare()
     {
         index = 0;

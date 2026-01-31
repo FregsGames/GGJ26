@@ -46,7 +46,14 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
         velocity.x = horizontal;
         velocity.y = vertical;
 
-        velocity = velocity.normalized * maxSpeed;
+        if(maskController.Current == "mask.speed")
+        {
+            velocity = velocity.normalized * maxSpeed * 3;
+        }
+        else
+        {
+            velocity = velocity.normalized * maxSpeed;
+        }
 
         player.linearVelocity = velocity;
 

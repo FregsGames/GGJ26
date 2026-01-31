@@ -15,6 +15,8 @@ public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerControll
     private float spawnRate;
     [SerializeField]
     private int maxEnemyCount;
+    [SerializeField]
+    private MaskController maskController;
 
     private List<Enemy> enemies;
 
@@ -73,6 +75,11 @@ public class EnemySpawnerController : MySerializedSingleton<EnemySpawnerControll
         {
             enemies.Remove(enemy);
             Destroy(enemy.gameObject);
+
+            if(maskController.Current == "mask.life")
+            {
+                PlayerHealthController.Instance.Heal(damage * 0.5f);
+            }
         }
     }
 }

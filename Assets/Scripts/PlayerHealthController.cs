@@ -30,6 +30,19 @@ public class PlayerHealthController : MySerializedSingleton<PlayerHealthControll
         healthBar.fillAmount = currentHealth / startingHealth;
     }
 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+
+        if (currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+
+        healthBar.fillAmount = currentHealth / startingHealth;
+    }
+
+
     public UniTask Setup()
     {
         return UniTask.CompletedTask;
