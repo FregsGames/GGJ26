@@ -66,6 +66,9 @@ public class ExplosionController : MonoBehaviour, IController
 
         await UniTask.Delay(310);
 
+        if (this == null || gameObject == null || tempList == null)
+            return;
+
         foreach (var e in tempList)
         {
             e.SetActive(false);

@@ -65,10 +65,8 @@ public class LevelBuilder : MonoBehaviour, IController
         var confinerComponent = (CinemachineConfiner2D)cam.AddComponent(typeof(CinemachineConfiner2D));
         confinerComponent.BoundingShape2D = confiner;
 
-        await UniTask.Yield();
+        await UniTask.DelayFrame(10);
         await nav.BuildNavMeshAsync();
-
-        
     }
 
     public UniTask Setup()

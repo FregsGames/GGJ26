@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: -4182167431066831741}
   - component: {fileID: 4339684514407399556}
   m_Layer: 0
-  m_Name: Mush
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,8 +117,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.15, y: 8.41, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2294701720326603268}
   - {fileID: 4732004106755953786}
@@ -134,7 +134,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 4
   m_Acceleration: 16
   avoidancePriority: 50
   m_AngularSpeed: 60
@@ -197,13 +197,13 @@ MonoBehaviour:
   agent: {fileID: 3782472737975309046}
   shooter: {fileID: 0}
   enemyAnimation: {fileID: 4339684514407399556}
-  health: 5
-  collisionDamage: 5
+  health: 500
+  collisionDamage: 20
   explode: 0
-  exp: 20
+  exp: 10
   explodeAnimation: []
   deadClip: 6
-  boss: 0
+  boss: 1
   dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:

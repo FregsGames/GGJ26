@@ -28,6 +28,9 @@ public class PlayerHealthController : MonoBehaviour, IController
 
     public void ReceiveDamage(float damage)
     {
+        if (!GameManager.Instance.Loaded)
+            return;
+
         currentHealth -= damage;
 
         if(currentHealth <= 0)
@@ -42,6 +45,9 @@ public class PlayerHealthController : MonoBehaviour, IController
 
     public void Heal(float amount)
     {
+        if (!GameManager.Instance.Loaded)
+            return;
+
         currentHealth += amount;
 
         if (currentHealth > MaxHealth)

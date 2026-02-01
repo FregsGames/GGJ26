@@ -17,6 +17,8 @@ public class MaskController : MonoBehaviour, IController
     private TextMeshProUGUI maskTmp;
     [SerializeField]
     private CharacterAnimation characterAnimation;
+    [SerializeField]
+    private EnemySpawnerController enemySpawnerController;
 
     private int index;
 
@@ -44,6 +46,11 @@ public class MaskController : MonoBehaviour, IController
     {
         shinies.Add(k);
         characterAnimation.UpdateMask();
+
+        if(shinies.Count == 3)
+        {
+            enemySpawnerController.SpawnBoss();
+        }
     }
 
     public UniTask Setup()

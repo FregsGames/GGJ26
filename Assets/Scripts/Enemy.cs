@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     private List<Sprite> explodeAnimation;
     [SerializeField]
     private Audios.Clip deadClip;
+    [SerializeField]
+    private bool boss;
 
     public bool dead;
 
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     public float CollisionDamage { get => collisionDamage; }
     public float Exp { get => exp; }
     public bool Explode { get => explode; }
+    public bool Boss { get => boss; }
     private float remainingHealth;
 
     public void Setup(int playerLevel)
@@ -104,7 +107,14 @@ public class Enemy : MonoBehaviour
             await enemyAnimation.DoOnce(explodeAnimation);
         }
 
+        if (this == null || gameObject == null)
+            return;
+
         await transform.DOScale(0, .5f).AsyncWaitForCompletion();
+
+        if (this == null || gameObject == null)
+            return;
+
         Destroy(gameObject);
     }
 }

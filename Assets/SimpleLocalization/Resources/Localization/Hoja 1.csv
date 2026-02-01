@@ -38,3 +38,5 @@ mask.damage.name,Cabra
 mask.damage.desc,Aumenta aún más el daño.
 mask.life.name,Murciélago
 mask.life.desc,Aumenta la cantidad de vida obtenida.
+ending,¡Has matado a la seta mala! Puedes seguir jugando si quieres.
+start,¡Eres un fantasma! Tu objetivo es acabar con la Seta Gigante que te mató.

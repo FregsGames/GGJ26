@@ -66,10 +66,10 @@ public class GameManager : MySerializedSingleton<GameManager>
 
     public async void ResolveDeath()
     {
+        Loaded = false;
         Time.timeScale = 0.0f;
         bool restart = await ConfirmationController.Instance.AskForConfirmation("death".Localize(), "restart".Localize(), "quit".Localize());
         await FadeController.Instance.Fade();
-        Loaded = false;
         if (restart)
         {
             await SceneManager.LoadSceneAsync("Game");
@@ -80,7 +80,6 @@ public class GameManager : MySerializedSingleton<GameManager>
             await PrepareControllers();
             Loaded= true;
             _ = FadeController.Instance.Unfade();
-            await ConfirmationController.Instance.AskForConfirmation("mask.tuto".Localize(), "ok".Localize(), "nice".Localize());
         }
         else
         {

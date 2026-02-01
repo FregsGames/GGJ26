@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour, IController
     private async void Play()
     {
         menu.SetActive(false);
+        await ConfirmationController.Instance.AskForConfirmation("start".Localize(), "Chachi", "nice".Localize());
         await ConfirmationController.Instance.AskForConfirmation("mask.tuto".Localize(), "ok".Localize(), "nice".Localize());
     }
 
@@ -48,7 +49,10 @@ public class MenuController : MonoBehaviour, IController
     public UniTask Prepare()
     {
         if (GameManager.Instance.AlreadyStarted)
+        {
+            menu.SetActive(false);
             return UniTask.CompletedTask;
+        }
 
         menu.SetActive(true);
         Time.timeScale = 0.0f;

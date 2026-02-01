@@ -134,7 +134,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 6
   m_Acceleration: 16
   avoidancePriority: 50
   m_AngularSpeed: 60
@@ -197,10 +197,10 @@ MonoBehaviour:
   agent: {fileID: 3782472737975309046}
   shooter: {fileID: 0}
   enemyAnimation: {fileID: 4339684514407399556}
-  health: 20
+  health: 10
   collisionDamage: 50
   explode: 1
-  exp: 20
+  exp: 40
   explodeAnimation:
   - {fileID: 4809905813131013004, guid: 71ddfba090196404caca30e633f96457, type: 3}
   - {fileID: 6083412712568238579, guid: 71ddfba090196404caca30e633f96457, type: 3}
@@ -214,6 +214,7 @@ MonoBehaviour:
   - {fileID: -323129313561759184, guid: 71ddfba090196404caca30e633f96457, type: 3}
   - {fileID: -2025879845224847872, guid: 71ddfba090196404caca30e633f96457, type: 3}
   deadClip: 7
+  boss: 0
   dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:

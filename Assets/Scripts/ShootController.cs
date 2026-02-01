@@ -27,7 +27,7 @@ public class ShootController : MonoBehaviour, ITickeable
     [SerializeField]
     private float minShotRate;
 
-    public float CurrentShotRate { get => Mathf.Clamp(baseShotRate - upgradesController.Level("upgrade.shotspeed") * 0.2f, minShotRate, baseShotRate); }
+    public float CurrentShotRate { get => Mathf.Clamp(baseShotRate - upgradesController.Level("upgrade.shotspeed") * 0.1f, minShotRate, baseShotRate); }
 
     private float timeSinceLastShot;
     private Vector3 direction;

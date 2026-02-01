@@ -20,6 +20,8 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     private PlayerHealthController playerHealthController;
     [SerializeField]
     private ExpController expController;
+    [SerializeField]
+    private Enemy boss;
 
     private List<Enemy> enemies;
 
@@ -57,6 +59,13 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
         {
             timeSinceLastSpawn += Time.deltaTime;
         }
+    }
+
+    public void SpawnBoss()
+    {
+        var enemy = Instantiate(boss, GetSpawnPoint(), Quaternion.identity);
+        enemy.Setup(expController.Level);
+        enemies.Add(enemy);
     }
 
     private void SpawnEnemy()
@@ -103,17 +112,27 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 
             if (dead)
             {
+
+
                 AudioController.Instance.Play(enemy.DeadClip);
                 enemies.Remove(enemy);
                 _ = enemy.Kill();
+
+                if (enemy.Boss)
+                {
+                    _ = ConfirmationController.Instance.AskForConfirmation("ending".Localize(), "Nice", "Very Nice");
+                }
+
+
                 expController.Gain(enemy.Exp);
+
             }
 
             if (maskController.Current == "mask.life")
             {
                 float mult = maskController.HasShiny("mask.life") ? 1.25f : 1;
 
-                playerHealthController.Heal(damage * 0.1f * mult);
+                playerHealthController.Heal(damage * 0.25f * mult);
             }
         }
     }
