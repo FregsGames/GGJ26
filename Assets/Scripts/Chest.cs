@@ -21,7 +21,7 @@ public class Chest : MonoBehaviour
                 await UniTask.Delay(1000);
                 string desc = requiredKey + ".desc";
                 string n = requiredKey + ".name";
-                _=ConfirmationController.Instance.AskForConfirmation($"{"maskObtained".Localize()} {n.Localize()}\n{desc.Localize()}", "ok", "nice");
+                _=ConfirmationController.Instance.AskForConfirmation($"{"maskObtained".Localize()} {n.Localize()}\n{desc.Localize()}", "Ok", "Nice");
             }
         }
     }

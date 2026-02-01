@@ -20,7 +20,7 @@ public class AudioController : MySerializedSingleton<AudioController>
 
     public void SetMusicVolume(float value)
     {
-        musicAudioSource.volume = value;
+        musicAudioSource.volume = value * .16f;
     }
 
     public void Play(Clip c)
