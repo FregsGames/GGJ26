@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BlockController : MySerializedSingleton<BlockController>, IController
+public class BlockController : MySerializedSingleton<BlockController>
 {
     [SerializeField]
     private GameObject filter;
@@ -12,16 +12,10 @@ public class BlockController : MySerializedSingleton<BlockController>, IControll
 
     private Dictionary<Transform, (Transform, int)> block;
 
-    public UniTask Prepare()
+    public void Start()
     {
         block = new Dictionary<Transform, (Transform, int)>();
         filter.SetActive(false);
-        return UniTask.CompletedTask;
-    }
-
-    public UniTask Setup()
-    {
-        return UniTask.CompletedTask;
     }
 
     public void Block(Transform t)

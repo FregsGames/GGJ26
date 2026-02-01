@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static Audios;
 
-public class AudioController : MySerializedSingleton<AudioController>, IController
+public class AudioController : MySerializedSingleton<AudioController>
 {
     [SerializeField]
     private AudioSource musicAudioSource;
@@ -12,16 +12,6 @@ public class AudioController : MySerializedSingleton<AudioController>, IControll
     private AudioSource effectsAudioSource;
     [SerializeField]
     private Audios audios;
-
-    public UniTask Prepare()
-    {
-        return UniTask.CompletedTask;
-    }
-
-    public UniTask Setup()
-    {
-        return UniTask.CompletedTask;
-    }
 
     public void SetSFXVolume(float value)
     {
@@ -39,7 +29,7 @@ public class AudioController : MySerializedSingleton<AudioController>, IControll
 
         if (audioclip != null)
         {
-            effectsAudioSource.pitch = 1;
+            effectsAudioSource.pitch = Random.Range(0.8f, 1.2f);
             effectsAudioSource.PlayOneShot(audioclip);
         }
         else

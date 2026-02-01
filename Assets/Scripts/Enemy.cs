@@ -22,10 +22,13 @@ public class Enemy : MonoBehaviour
     private float exp;
     [SerializeField]
     private List<Sprite> explodeAnimation;
+    [SerializeField]
+    private Audios.Clip deadClip;
 
     public bool dead;
 
     public NavMeshAgent Agent { get => agent; }
+    public Audios.Clip DeadClip { get => deadClip; }
     public float CollisionDamage { get => collisionDamage; }
     public float Exp { get => exp; }
     public bool Explode { get => explode; }

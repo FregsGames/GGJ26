@@ -12,7 +12,7 @@ public class Audios : SerializedScriptableObject
 
     public enum Clip
     {
-        Click,
+        Click, Impact, Key, Chest, LevelUp, Die1, Die2, Die3
     }
 
     [SerializeField]

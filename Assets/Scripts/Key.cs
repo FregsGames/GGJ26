@@ -12,6 +12,7 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioController.Instance.Play(Audios.Clip.Key);
             col.enabled = false;
             FindFirstObjectByType<KeyController>().ObtainKey(key);
             transform.DOScale(0, 0.25f);

@@ -201,6 +201,8 @@ MonoBehaviour:
   collisionDamage: 5
   explode: 0
   exp: 10
+  explodeAnimation: []
+  deadClip: 6
   dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:

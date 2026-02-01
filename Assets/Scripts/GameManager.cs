@@ -43,6 +43,7 @@ public class GameManager : MySerializedSingleton<GameManager>
         FadeController.Instance.InstantFade();
         _ = FadeController.Instance.Unfade();
 
+        Time.timeScale = 0.0f;
 
         AlreadyStarted = true;
     }

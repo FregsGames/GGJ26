@@ -60,7 +60,9 @@ public class UpgradesController : MonoBehaviour, IController
 
     public void ResolveUpgrade(string id)
     {
-        if(currentUpgrades.ContainsKey(id))
+        AudioController.Instance.Play(Audios.Clip.Click);
+
+        if (currentUpgrades.ContainsKey(id))
         {
             currentUpgrades[id]++;
         }

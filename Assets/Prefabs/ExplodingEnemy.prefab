@@ -213,6 +213,7 @@ MonoBehaviour:
   - {fileID: 6101026255831561385, guid: 71ddfba090196404caca30e633f96457, type: 3}
   - {fileID: -323129313561759184, guid: 71ddfba090196404caca30e633f96457, type: 3}
   - {fileID: -2025879845224847872, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  deadClip: 7
   dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:

@@ -90,6 +90,8 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
     {
         if (enemies.Contains(enemy))
         {
+            AudioController.Instance.Play(Audios.Clip.Impact);
+
             FindFirstObjectByType<ExplosionController>().Explosion(enemy.transform.position, 15, Color.white, 0.35f);
 
             bool dead = enemy.Damage(damage);
@@ -101,6 +103,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 
             if (dead)
             {
+                AudioController.Instance.Play(enemy.DeadClip);
                 enemies.Remove(enemy);
                 _ = enemy.Kill();
                 expController.Gain(enemy.Exp);

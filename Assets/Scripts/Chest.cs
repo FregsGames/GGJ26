@@ -14,6 +14,7 @@ public class Chest : MonoBehaviour
         {
             if (FindFirstObjectByType<KeyController>().HasKey(requiredKey))
             {
+                AudioController.Instance.Play(Audios.Clip.Chest);
                 GetComponent<Collider2D>().enabled = false;
                 FindFirstObjectByType<MaskController>().ObtainShiny(requiredKey);
                 animationOnce.Animate();
