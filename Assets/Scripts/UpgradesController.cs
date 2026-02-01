@@ -12,6 +12,8 @@ public class UpgradesController : MonoBehaviour, IController
     private Transform upgradesContainer;
     [SerializeField]
     private List<UpgradeData> upgrades;
+    [SerializeField]
+    private PlayerHealthController healthController;
 
     private Dictionary<string, int> currentUpgrades;
 
@@ -66,6 +68,13 @@ public class UpgradesController : MonoBehaviour, IController
         {
             currentUpgrades.Add(id, 1);
         }
+
+        if(id == "upgrade.health")
+        {
+            healthController.MaxHealth = healthController.StartingHealth + healthController.StartingHealth * 0.2f * Level("upgrade.health");
+            healthController.Heal(healthController.MaxHealth);
+        }
+
         upgradesContainer.gameObject.SetActive(false);
         Time.timeScale = 1f;
         BlockController.Instance.Unblock(upgradesContainer);

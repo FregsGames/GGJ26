@@ -1,5 +1,4 @@
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootController : MonoBehaviour, ITickeable
@@ -28,7 +27,7 @@ public class ShootController : MonoBehaviour, ITickeable
     [SerializeField]
     private float minShotRate;
 
-    public float CurrentShotRate { get => Mathf.Clamp(baseShotRate - expController.Level * 0.1f, minShotRate, baseShotRate); }
+    public float CurrentShotRate { get => Mathf.Clamp(baseShotRate - upgradesController.Level("upgrade.shotspeed") * 0.2f, minShotRate, baseShotRate); }
 
     private float timeSinceLastShot;
     private Vector3 direction;
@@ -42,7 +41,7 @@ public class ShootController : MonoBehaviour, ITickeable
 
         shotTarget.position = player.transform.position + direction * 3;
 
-        if(timeSinceLastShot < CurrentShotRate)
+        if (timeSinceLastShot < CurrentShotRate)
         {
             timeSinceLastShot += Time.deltaTime;
         }
@@ -65,10 +64,11 @@ public class ShootController : MonoBehaviour, ITickeable
         {
             float angle = angleStep * i;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            var d = rotation* direction.normalized;
+            var d = rotation * direction.normalized;
 
             var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
-            _ = p.Move(maskController.Current == "mask.damage" ? baseDamage * 3 : baseDamage, 5, d, 10, "Enemy");
+            var damage = baseDamage + upgradesController.Level("upgrade.damage");
+            _ = p.Move(maskController.Current == "mask.damage" ? damage * 3 : damage, 5, d, 10, "Enemy");
         }
 
 

@@ -25,7 +25,7 @@ public class ExpController : MonoBehaviour, IController
     {
         currentExp += exp;
 
-        if(currentExp > currentRequiredExp)
+        if(currentExp >= currentRequiredExp)
         {
             var left = currentExp - currentRequiredExp;
             LevelUp();

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +11,18 @@ public class PlayerHealthController : MonoBehaviour, IController
     private Image healthBar;
     [SerializeField]
     private float currentHealth;
+    [SerializeField]
+    private TextMeshProUGUI healthTMP;
+
+    public float StartingHealth { get => startingHealth; }
+    public float MaxHealth { get; set; }
 
     public UniTask Prepare()
     {
-        currentHealth = startingHealth;
+        MaxHealth = startingHealth;
+        currentHealth = MaxHealth;
         healthBar.fillAmount = 1f;
+        healthTMP.text = $"{currentHealth.ToString("F0")}/{MaxHealth.ToString("F0")}";
         return UniTask.CompletedTask;
     }
 
@@ -28,19 +36,21 @@ public class PlayerHealthController : MonoBehaviour, IController
             GameManager.Instance.ResolveDeath();
         }
 
-        healthBar.fillAmount = currentHealth / startingHealth;
+        healthBar.fillAmount = currentHealth / MaxHealth;
+        healthTMP.text = $"{currentHealth.ToString("F0")}/{MaxHealth.ToString("F0")}";
     }
 
     public void Heal(float amount)
     {
         currentHealth += amount;
 
-        if (currentHealth > startingHealth)
+        if (currentHealth > MaxHealth)
         {
-            currentHealth = startingHealth;
+            currentHealth = MaxHealth;
         }
 
-        healthBar.fillAmount = currentHealth / startingHealth;
+        healthBar.fillAmount = currentHealth / MaxHealth;
+        healthTMP.text = $"{currentHealth.ToString("F0")}/{MaxHealth.ToString("F0")}";
     }
 
 
