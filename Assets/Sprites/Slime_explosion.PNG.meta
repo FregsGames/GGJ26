@@ -1,0 +1,541 @@
+fileFormatVersion: 2
+guid: 71ddfba090196404caca30e633f96457
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4809905813131013004
+    second: Slime_explosion_0
+  - first:
+      213: 6083412712568238579
+    second: Slime_explosion_1
+  - first:
+      213: -7112686914061841301
+    second: Slime_explosion_2
+  - first:
+      213: -5313713334777292239
+    second: Slime_explosion_3
+  - first:
+      213: 9136177103707711239
+    second: Slime_explosion_4
+  - first:
+      213: 3503798978567520917
+    second: Slime_explosion_5
+  - first:
+      213: -9167573242633350542
+    second: Slime_explosion_6
+  - first:
+      213: 674435447547059032
+    second: Slime_explosion_7
+  - first:
+      213: -8692972840012778168
+    second: Slime_explosion_8
+  - first:
+      213: -7408897902428403621
+    second: Slime_explosion_9
+  - first:
+      213: -4816592742684024325
+    second: Slime_explosion_10
+  - first:
+      213: -1566642200234581430
+    second: Slime_explosion_11
+  - first:
+      213: 3424374798868143128
+    second: Slime_explosion_12
+  - first:
+      213: -5364357228565971455
+    second: Slime_explosion_13
+  - first:
+      213: 6690065186057297758
+    second: Slime_explosion_14
+  - first:
+      213: 292104786212312371
+    second: Slime_explosion_15
+  - first:
+      213: -1875301538566078439
+    second: Slime_explosion_16
+  - first:
+      213: -1607647091871098112
+    second: Slime_explosion_17
+  - first:
+      213: 5569298495539055561
+    second: Slime_explosion_18
+  - first:
+      213: -4687771406274119646
+    second: Slime_explosion_19
+  - first:
+      213: -372744008561782975
+    second: Slime_explosion_20
+  - first:
+      213: 6101026255831561385
+    second: Slime_explosion_21
+  - first:
+      213: 7191094861732340166
+    second: Slime_explosion_22
+  - first:
+      213: 7656866509777682553
+    second: Slime_explosion_23
+  - first:
+      213: 6548502328380488773
+    second: Slime_explosion_24
+  - first:
+      213: 695872661514171620
+    second: Slime_explosion_25
+  - first:
+      213: 6146704427781375382
+    second: Slime_explosion_26
+  - first:
+      213: 6714806861373068179
+    second: Slime_explosion_27
+  - first:
+      213: 2368551872215889046
+    second: Slime_explosion_28
+  - first:
+      213: 7122715368786689047
+    second: Slime_explosion_29
+  - first:
+      213: -8584562645425015313
+    second: Slime_explosion_30
+  - first:
+      213: -4507593597750274439
+    second: Slime_explosion_31
+  - first:
+      213: 1408418004698159228
+    second: Slime_explosion_32
+  - first:
+      213: -323129313561759184
+    second: Slime_explosion_33
+  - first:
+      213: -582378088866454705
+    second: Slime_explosion_34
+  - first:
+      213: 7696660052696604575
+    second: Slime_explosion_35
+  - first:
+      213: 4250218979517813543
+    second: Slime_explosion_36
+  - first:
+      213: 6682276098049779891
+    second: Slime_explosion_37
+  - first:
+      213: -919662138345037585
+    second: Slime_explosion_38
+  - first:
+      213: 2808368589897710331
+    second: Slime_explosion_39
+  - first:
+      213: -2025879845224847872
+    second: Slime_explosion_40
+  - first:
+      213: 4823135115899733833
+    second: Slime_explosion_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Slime_explosion_0
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 771
+        width: 248
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ba2c26ad730c240800000000000000
+      internalID: 4809905813131013004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 767
+        width: 319
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1b9ba71af9c6450800000000000000
+      internalID: 6083412712568238579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_3
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 764
+        width: 346
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ad75210e5e146b0800000000000000
+      internalID: -5313713334777292239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 774
+        width: 172
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8457be4624b5c5780800000000000000
+      internalID: -8692972840012778168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_9
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 780
+        width: 111
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b584e9c9c9e4e2990800000000000000
+      internalID: -7408897902428403621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_10
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 776
+        width: 184
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf128908b66082db0800000000000000
+      internalID: -4816592742684024325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_16
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 422
+        width: 420
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910860bbf2799f5e0800000000000000
+      internalID: -1875301538566078439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_20
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 405
+        width: 515
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f05819c4fb3daf0800000000000000
+      internalID: -372744008561782975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_21
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 423
+        width: 592
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4fb281e033ba450800000000000000
+      internalID: 6101026255831561385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_33
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 195
+        width: 582
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032b2a0f993048bf0800000000000000
+      internalID: -323129313561759184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_explosion_40
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 183
+        width: 592
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006efbba301a2e3e0800000000000000
+      internalID: -2025879845224847872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4980ea03ea79be942a491e9209863b60
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Slime_explosion_0: 4809905813131013004
+      Slime_explosion_1: 6083412712568238579
+      Slime_explosion_10: -4816592742684024325
+      Slime_explosion_11: -1566642200234581430
+      Slime_explosion_12: 3424374798868143128
+      Slime_explosion_13: -5364357228565971455
+      Slime_explosion_14: 6690065186057297758
+      Slime_explosion_15: 292104786212312371
+      Slime_explosion_16: -1875301538566078439
+      Slime_explosion_17: -1607647091871098112
+      Slime_explosion_18: 5569298495539055561
+      Slime_explosion_19: -4687771406274119646
+      Slime_explosion_2: -7112686914061841301
+      Slime_explosion_20: -372744008561782975
+      Slime_explosion_21: 6101026255831561385
+      Slime_explosion_22: 7191094861732340166
+      Slime_explosion_23: 7656866509777682553
+      Slime_explosion_24: 6548502328380488773
+      Slime_explosion_25: 695872661514171620
+      Slime_explosion_26: 6146704427781375382
+      Slime_explosion_27: 6714806861373068179
+      Slime_explosion_28: 2368551872215889046
+      Slime_explosion_29: 7122715368786689047
+      Slime_explosion_3: -5313713334777292239
+      Slime_explosion_30: -8584562645425015313
+      Slime_explosion_31: -4507593597750274439
+      Slime_explosion_32: 1408418004698159228
+      Slime_explosion_33: -323129313561759184
+      Slime_explosion_34: -582378088866454705
+      Slime_explosion_35: 7696660052696604575
+      Slime_explosion_36: 4250218979517813543
+      Slime_explosion_37: 6682276098049779891
+      Slime_explosion_38: -919662138345037585
+      Slime_explosion_39: 2808368589897710331
+      Slime_explosion_4: 9136177103707711239
+      Slime_explosion_40: -2025879845224847872
+      Slime_explosion_41: 4823135115899733833
+      Slime_explosion_42: -1993311227
+      Slime_explosion_5: 3503798978567520917
+      Slime_explosion_6: -9167573242633350542
+      Slime_explosion_7: 674435447547059032
+      Slime_explosion_8: -8692972840012778168
+      Slime_explosion_9: -7408897902428403621
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

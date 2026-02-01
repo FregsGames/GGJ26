@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,6 +20,8 @@ public class Enemy : MonoBehaviour
     private bool explode;
     [SerializeField]
     private float exp;
+    [SerializeField]
+    private List<Sprite> explodeAnimation;
 
     public bool dead;
 
@@ -93,6 +96,11 @@ public class Enemy : MonoBehaviour
     {
         agent.isStopped = true;
         GetComponent<Collider2D>().enabled = false;
+        if (explodeAnimation != null && explodeAnimation.Count > 0)
+        {
+            await enemyAnimation.DoOnce(explodeAnimation);
+        }
+
         await transform.DOScale(0, .5f).AsyncWaitForCompletion();
         Destroy(gameObject);
     }

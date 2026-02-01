@@ -58,7 +58,7 @@ public class EnemyAnimation : MonoBehaviour
         blinking = false;
     }
 
-    public async void DoOnce(List<Sprite> animation)
+    public async UniTask DoOnce(List<Sprite> animation)
     {
         doingOnce = true;
 

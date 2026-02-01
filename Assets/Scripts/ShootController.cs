@@ -1,6 +1,5 @@
 using Unity.Cinemachine;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class ShootController : MonoBehaviour, ITickeable
 {

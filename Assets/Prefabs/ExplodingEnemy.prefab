@@ -180,8 +180,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_Radius: 0.53
+  m_Offset: {x: 0, y: 0.27}
+  m_Radius: 0.66
 --- !u!114 &-4182167431066831741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +201,18 @@ MonoBehaviour:
   collisionDamage: 50
   explode: 1
   exp: 20
+  explodeAnimation:
+  - {fileID: 4809905813131013004, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: 6083412712568238579, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -5313713334777292239, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -8692972840012778168, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -7408897902428403621, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -4816592742684024325, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -1875301538566078439, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -372744008561782975, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: 6101026255831561385, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -323129313561759184, guid: 71ddfba090196404caca30e633f96457, type: 3}
+  - {fileID: -2025879845224847872, guid: 71ddfba090196404caca30e633f96457, type: 3}
   dead: 0
 --- !u!114 &4339684514407399556
 MonoBehaviour:
@@ -217,13 +229,12 @@ MonoBehaviour:
   sRenderer: {fileID: 757372824796966798}
   maskRenderer: {fileID: 922927946544224308}
   sprites:
-  - {fileID: 5403691848409731444, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  - {fileID: 3281728928585059485, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  - {fileID: 8258921945522174159, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  - {fileID: -6169596719261809210, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  - {fileID: -5228064327546028600, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  - {fileID: -553668471753469999, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  - {fileID: -4013724843874396633, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
+  - {fileID: 5512721175205409606, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
+  - {fileID: -3742991318533782717, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
+  - {fileID: 7797396014065532787, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
+  - {fileID: 1568684114368218790, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
+  - {fileID: -1013262489855661798, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
+  - {fileID: -5193236833870236611, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
   animationDelay: 0.1
 --- !u!1 &8275721072969858524
 GameObject:
@@ -306,8 +317,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5403691848409731444, guid: 72ada70cdddcf0746a4a4ac52ac8f054, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 5512721175205409606, guid: d4a35edf7f16c0e45a5a26fa1278cf68, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
