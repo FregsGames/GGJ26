@@ -15,7 +15,7 @@ restart,Jugar
 quit,Salir
 play,Jugar
 credits,Créditos
-credits.value,Hecho por Bita y Nacho.
+credits.value,Hecho por Bita y Nacho.\nhttps://fregs-games.itch.io/\nX
 nice,Genial
 cameraShake,Camera shake
 level,Nivel
@@ -29,3 +29,5 @@ upgrade.damage.desc,Aumenta el daño de los disparos.
 upgrade.speed.desc,Aumenta la velocidad de movimiento.
 upgrade.health.desc,Aumenta la salud en un 10% y te cura.
 upgrade.shotspeed.desc,Aumenta la velocidad de los disparos.
+ok,Vale
+mask.tuto,Cambia de máscara con Q y E

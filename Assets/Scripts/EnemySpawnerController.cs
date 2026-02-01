@@ -51,6 +51,7 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
         if (timeSinceLastSpawn >= SpawnRate && enemies.Count < MaxEnemyCount)
         {
             SpawnEnemy();
+            SpawnEnemy();
         }
         else
         {

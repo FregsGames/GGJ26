@@ -22,10 +22,10 @@ public class MenuController : MonoBehaviour, IController
         quitButton.onClick.AddListener(Quit);
     }
 
-    private void Play()
+    private async void Play()
     {
         menu.SetActive(false);
-        Time.timeScale = 1.0f;
+        await ConfirmationController.Instance.AskForConfirmation("mask.tuto".Localize(), "ok".Localize(), "nice".Localize());
     }
 
     private void ShowCredits()

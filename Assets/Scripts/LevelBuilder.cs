@@ -29,20 +29,34 @@ public class LevelBuilder : MonoBehaviour, IController
         sRenderer.size = Vector2.one * size;
         foreach (var component in components)
         {
-            var amount = baseElementDensity * size * component.densityMultiplier;
-
-            for (int i = 0; i < amount; i++)
+            if (component.justOne)
             {
-                var pos = new Vector3(UnityEngine.Random.Range(-size / 2f, size / 2f), UnityEngine.Random.Range(-size / 2f, size / 2f), 0);
+                var pos = new Vector3(UnityEngine.Random.Range(-size * 0.75f / 2f, size * 0.75f / 2f), UnityEngine.Random.Range(-size * 0.75f / 2f, size * 0.75f / 2f), 0);
 
-                while(Vector3.Distance(pos, Vector3.zero) < 2)
+                while (Vector3.Distance(pos, Vector3.zero) < 2)
                 {
-                    Debug.Log(i);
-                    pos = new Vector3(UnityEngine.Random.Range(-size / 2f, size / 2f), UnityEngine.Random.Range(-size / 2f, size / 2f), 0);
+                    pos = new Vector3(UnityEngine.Random.Range(-size * 0.75f / 2f, size * 0.75f / 2f), UnityEngine.Random.Range(-size * 0.75f / 2f, size * 0.75f / 2f), 0);
                 }
 
                 var c = Instantiate(component.prefab, sRenderer.transform);
                 c.transform.position = pos;
+            }
+            else
+            {
+                var amount = baseElementDensity * size * component.densityMultiplier;
+
+                for (int i = 0; i < amount; i++)
+                {
+                    var pos = new Vector3(UnityEngine.Random.Range(-size / 2f, size / 2f), UnityEngine.Random.Range(-size / 2f, size / 2f), 0);
+
+                    while (Vector3.Distance(pos, Vector3.zero) < 2)
+                    {
+                        pos = new Vector3(UnityEngine.Random.Range(-size / 2f, size / 2f), UnityEngine.Random.Range(-size / 2f, size / 2f), 0);
+                    }
+
+                    var c = Instantiate(component.prefab, sRenderer.transform);
+                    c.transform.position = pos;
+                }
             }
 
         }
@@ -69,4 +83,5 @@ public class MapComponent
 {
     public GameObject prefab;
     public float densityMultiplier;
+    public bool justOne;
 }

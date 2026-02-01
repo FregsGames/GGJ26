@@ -65,7 +65,9 @@ public class ConfirmationController : MySerializedSingleton<ConfirmationControll
 
         BlockController.Instance.Block(container.transform);
 
+        Time.timeScale = 0.0f;
         await UniTask.WaitUntil(() => answerReceived, cancellationToken: token);
+        Time.timeScale = 1.0f;
 
         if (this == null || gameObject == null || token == null || token.IsCancellationRequested)
             return false;

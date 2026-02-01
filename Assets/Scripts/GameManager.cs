@@ -39,6 +39,7 @@ public class GameManager : MySerializedSingleton<GameManager>
         FadeController.Instance.InstantFade();
         _ = FadeController.Instance.Unfade();
 
+
         AlreadyStarted = true;
     }
 
@@ -74,6 +75,7 @@ public class GameManager : MySerializedSingleton<GameManager>
             await PrepareControllers();
             Loaded= true;
             _ = FadeController.Instance.Unfade();
+            await ConfirmationController.Instance.AskForConfirmation("mask.tuto".Localize(), "ok".Localize(), "nice".Localize());
         }
         else
         {

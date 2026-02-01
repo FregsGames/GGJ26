@@ -70,8 +70,6 @@ public class PlayerController : MonoBehaviour, ITickeable, IFixedTickeable
         velocity.x = horizontal;
         velocity.y = vertical;
 
-        
-
         if(maskController.Current == "mask.speed")
         {
             velocity = velocity.normalized * (maxSpeed + upgradesController.Level("upgrade.speed") * 0.1f) * 2;
