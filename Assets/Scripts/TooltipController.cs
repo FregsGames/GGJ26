@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
-public class TooltipController : MySerializedSingleton<TooltipController>, IController
+public class TooltipController : MySerializedSingleton<TooltipController>
 {
     [SerializeField]
     private RectTransform container;
@@ -11,17 +11,10 @@ public class TooltipController : MySerializedSingleton<TooltipController>, ICont
     [SerializeField]
     private TextMeshProUGUI contentTMP;
 
-    public UniTask Prepare()
+    public void Start()
     {
         container.gameObject.SetActive(false);
-        return UniTask.CompletedTask;
     }
-
-    public UniTask Setup()
-    {
-        return UniTask.CompletedTask;
-    }
-
     public void ShowTooltip(string title, string info, RectTransform r)
     {
         titleTMP.text = title;

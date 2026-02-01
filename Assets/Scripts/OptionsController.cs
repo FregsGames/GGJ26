@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OptionsController : MySerializedSingleton<OptionsController>, IController
+public class OptionsController : MySerializedSingleton<OptionsController>
 {
     [SerializeField]
     private Button openOptionsButton;
@@ -71,7 +71,7 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
         shake.onValueChanged.RemoveListener(ToggleShake);
     }
 
-    public UniTask Prepare()
+    public void Start()
     {
         AudioController.Instance.SetMusicVolume(PlayerPrefs.GetFloat("musicVol", 1));
         AudioController.Instance.SetSFXVolume(PlayerPrefs.GetFloat("sfxVol", 1));
@@ -81,11 +81,5 @@ public class OptionsController : MySerializedSingleton<OptionsController>, ICont
 
         shake.SetIsOnWithoutNotify(PlayerPrefs.GetInt("shake", 1) == 1);
         Shake = PlayerPrefs.GetInt("shake", 1) == 1;
-        return UniTask.CompletedTask;
-    }
-
-    public UniTask Setup()
-    {
-        return UniTask.CompletedTask;
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DialogueController : MySerializedSingleton<DialogueController>, IController
+public class DialogueController : MySerializedSingleton<DialogueController>
 {
     [SerializeField]
     private RectTransform container;
@@ -27,16 +27,11 @@ public class DialogueController : MySerializedSingleton<DialogueController>, ICo
 
     public bool OnDialogue { get; private set; }
 
-    public UniTask Prepare()
+    public void Start()
     {
         container.gameObject.SetActive(false);
-        return UniTask.CompletedTask;
     }
 
-    public UniTask Setup()
-    {
-        return UniTask.CompletedTask;
-    }
 
     public async UniTask ShowDialogue(string conversationID, bool top)
     {

@@ -3,14 +3,14 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FadeController : MySerializedSingleton<FadeController>, IController
+public class FadeController : MySerializedSingleton<FadeController>
 {
     [SerializeField]
     private Image loadScreen;
 
-    public UniTask Setup()
+    public void Start()
     {
-        return UniTask.CompletedTask;
+        loadScreen.enabled = false;
     }
 
     public void InstantFade()
@@ -33,10 +33,5 @@ public class FadeController : MySerializedSingleton<FadeController>, IController
     {
         await loadScreen.DOColor(Color.clear, 0.5f).SetUpdate(true).AsyncWaitForCompletion();
         loadScreen.enabled = false;
-    }
-    public UniTask Prepare()
-    {
-        loadScreen.enabled = false;
-        return UniTask.CompletedTask;
     }
 }

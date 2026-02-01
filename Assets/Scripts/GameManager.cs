@@ -16,6 +16,8 @@ public class GameManager : MySerializedSingleton<GameManager>
     private List<ITickeable> tickeables;
     [SerializeField]
     private List<IFixedTickeable> fixedTickeables;
+    [SerializeField]
+    private Texture2D cursor;
 
     public Camera Cam { get => uiCamera; }
     public bool Loaded { get; private set; }
@@ -32,6 +34,8 @@ public class GameManager : MySerializedSingleton<GameManager>
 
     private async void Start()
     {
+        Cursor.SetCursor(cursor, new Vector2(cursor.width / 2f, cursor.height / 2f), CursorMode.Auto);
+        await UniTask.DelayFrame(10);
         LocalizationManager.Language = "Spanish";
         LocalizationManager.Read();
         await PrepareControllers();

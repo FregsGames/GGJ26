@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ConfirmationController : MySerializedSingleton<ConfirmationController>, IController
+public class ConfirmationController : MySerializedSingleton<ConfirmationController>
 {
     [SerializeField]
     private GameObject container;
@@ -28,14 +28,12 @@ public class ConfirmationController : MySerializedSingleton<ConfirmationControll
     private CancellationTokenSource timerToken;
 
 
-    public UniTask Prepare()
+    public void Start()
     {
         answerPressedPositive = new UnityAction(() => ResolveAnswer(true));
         answerPressedNegative = new UnityAction(() => ResolveAnswer(false));
 
         container.SetActive(false);
-
-        return UniTask.CompletedTask;
     }
 
     public async UniTask<bool> AskForConfirmation(string text, string positive, string negative)
@@ -99,10 +97,5 @@ public class ConfirmationController : MySerializedSingleton<ConfirmationControll
 
         answerReceived = true;
         positiveAnswer = positive;
-    }
-
-    public UniTask Setup()
-    {
-        return UniTask.CompletedTask;
     }
 }
