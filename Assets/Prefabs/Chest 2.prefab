@@ -167,8 +167,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.92134, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 8442122537491320017, guid: 5e60ceb682a742c4c8175010b407dea8, type: 3}
+  m_Color: {r: 1, g: 0, b: 0.61990404, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -213,7 +213,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.46
+  m_Radius: 2.5
 --- !u!114 &5488803597790794881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6457b6c95f58f3845b5dddc8c744f685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredKey: third
+  requiredKey: mask.life
   animationOnce: {fileID: 2665541691153303262}
 --- !u!114 &2665541691153303262
 MonoBehaviour:
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sRenderer: {fileID: 3869449430036364386}
   sprites:
-  - {fileID: -2413806693520163455, guid: e074a9b4b276847b0b578d2c96d2c1db, type: 3}
-  - {fileID: 21300000, guid: 0ee0b44b8c03546a392c57dc59d85589, type: 3}
-  - {fileID: 21300000, guid: 58094e2ec45f7480e81fb4a78bc2dd66, type: 3}
+  - {fileID: 8442122537491320017, guid: 5e60ceb682a742c4c8175010b407dea8, type: 3}
+  - {fileID: -2444545089116836908, guid: 5e60ceb682a742c4c8175010b407dea8, type: 3}
+  - {fileID: 4059978414810172163, guid: 5e60ceb682a742c4c8175010b407dea8, type: 3}
   onStart: 0

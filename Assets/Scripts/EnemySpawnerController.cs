@@ -108,7 +108,9 @@ public class EnemySpawnerController : MonoBehaviour, IController, ITickeable
 
             if (maskController.Current == "mask.life")
             {
-                playerHealthController.Heal(damage * 0.5f);
+                float mult = maskController.HasShiny("mask.life") ? 1.25f : 1;
+
+                playerHealthController.Heal(damage * 0.1f * mult);
             }
         }
     }

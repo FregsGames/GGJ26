@@ -69,8 +69,10 @@ public class ShootController : MonoBehaviour, ITickeable
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             var d = rotation * direction.normalized;
 
+            float mult = maskController.HasShiny("mask.damage") ? 1.5f : 1;
+
             var p = Instantiate(projectilePrefab, shotPos.position, Quaternion.identity);
-            var damage = baseDamage + upgradesController.Level("upgrade.damage");
+            var damage = baseDamage + upgradesController.Level("upgrade.damage") * mult;
             _ = p.Move(maskController.Current == "mask.damage" ? damage * 3 : damage, 5, d, 10, "Enemy");
         }
 

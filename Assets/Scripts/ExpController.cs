@@ -41,7 +41,7 @@ public class ExpController : MonoBehaviour, IController
     public void LevelUp()
     {
         level++;
-        currentRequiredExp = currentRequiredExp * 1.5f;
+        currentRequiredExp = currentRequiredExp * 1.2f;
         levelTMP.text = "level".Localize() + " " + level.ToString();
         upgradesController.ResolveLevelUp();
     }

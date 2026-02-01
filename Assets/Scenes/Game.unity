@@ -7260,20 +7260,33 @@ MonoBehaviour:
     - {fileID: 6283677431638504614, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
     - {fileID: 6528668340850245748, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
     - {fileID: -1991551716799858780, guid: ff6ca7839e2c45642b6a56a6b5fb89e0, type: 3}
+    shinySprites:
+    - {fileID: 6240287481542635396, guid: 9289be3f65da8354db852086fd6cce62, type: 3}
+    - {fileID: 6190517784457340782, guid: 9289be3f65da8354db852086fd6cce62, type: 3}
+    - {fileID: -1502306928611623395, guid: 9289be3f65da8354db852086fd6cce62, type: 3}
     id: mask.speed
   - sprites:
     - {fileID: -4484432000504760811, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
     - {fileID: 6615088795127792508, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
     - {fileID: -6393583395310623584, guid: a6be7f2ef67696f4182a1213b8fa8be5, type: 3}
+    shinySprites:
+    - {fileID: -504292254961753350, guid: e6b841b92c5e7b949aa1eff4b006f745, type: 3}
+    - {fileID: 8025966298938686336, guid: e6b841b92c5e7b949aa1eff4b006f745, type: 3}
+    - {fileID: 8180957818359607591, guid: e6b841b92c5e7b949aa1eff4b006f745, type: 3}
     id: mask.damage
   - sprites:
     - {fileID: 5355826804682927190, guid: 95ce69cd36a8a7d4e95733c993f8f2a8, type: 3}
     - {fileID: -3496854166523516535, guid: 95ce69cd36a8a7d4e95733c993f8f2a8, type: 3}
     - {fileID: 27427599567916742, guid: 95ce69cd36a8a7d4e95733c993f8f2a8, type: 3}
+    shinySprites:
+    - {fileID: -23605422331418882, guid: df93d27c8f0238147bdf74c3740ba722, type: 3}
+    - {fileID: 6603593252426604808, guid: df93d27c8f0238147bdf74c3740ba722, type: 3}
+    - {fileID: -2571457946840606811, guid: df93d27c8f0238147bdf74c3740ba722, type: 3}
     id: mask.life
   maskImage: {fileID: 1129700309}
   maskTmp: {fileID: 1118450286}
   characterAnimation: {fileID: 839501157}
+  shinies: []
 --- !u!4 &1614860125
 Transform:
   m_ObjectHideFlags: 0
